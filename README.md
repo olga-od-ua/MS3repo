@@ -1,3 +1,51 @@
+# USER STORIES
+## New Users
+1. I am Rebecca and I am a new mother to a 6 month old baby. It is time to start introducing solid foods to my baby but I have no idea where to start.
+
+2. I am Stacy and I am a mother to a 5 month old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and their babies loved.
+
+3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives and see if there are any recipes that I would be able to cook for our whole family.
+
+4. I am Clare and I love cooking for my 9 month old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+
+5. I am Chris, a dad to 15 month old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutricious recipes to cook for them.
+
+6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
+
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8 month old girl. I am only looking for recipes that are approved by healthcare professionals.
+
+## Frequent Users
+
+1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
+
+2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook meals for their kids just like their Granny does.
+
+## Returning Users
+1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
+
+2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been adviced by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome olga-od-ua,
