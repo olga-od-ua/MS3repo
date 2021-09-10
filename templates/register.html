@@ -5,7 +5,7 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel teal">
+        <div class="card-panel">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
@@ -15,9 +15,30 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" name="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">face</i>
+                    <input id="status" name="status" type="text" class="validate">
+                    <label for="email">Status (e.g. mother, nurse, granny etc.)</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
                     <input id="password" name="password" type="password" class="validate">
                     <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="confirm-password" name="confirm-password" type="password" class="validate">
+                    <label for="confirm-password">Confirm password</label>
                 </div>
             </div>
             <div class="row">
