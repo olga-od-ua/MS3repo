@@ -1,27 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.age_group }}<br>
-        {{ recipe.meal_type }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.cooking_instructions }}<br>
-        {{ recipe.HSE_approved}}<br>
-    {% endfor %}
-
     <ul class="collapsible">
+        {% for recipe in recipes %}
         <li>
-            <div class="collapsible-header deep-orange lighten-2"><i class="material-icons">expand_more</i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header deep-orange lighten-2">
+                <i class="material-icons">expand_more</i>
+                {% if recipe.HSE_approved == "on" %}
+                    <i class="material-icons prefix tooltipped" data-position="top" data-tooltip="Approved by HSE">child_care</i>
+                {% endif %}
+                {{ recipe.recipe_name }}<br>
+                {{ recipe.age_group }}
+                
+            </div>
+            <div class="collapsible-body">
+                <p>{{ recipe.meal_type }}</p>
+                <p>{{ recipe.ingredients }}</p>
+                <p>{{ recipe.cooking_instructions }}</p>
+                <p>{{ recipe.HSE_approved}}</p>
+            </div>
         </li>
-        <li>
-            <div class="collapsible-header deep-orange lighten-2"><i class="material-icons">expand_more</i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header deep-orange lighten-2"><i class="material-icons">expand_more</i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% endfor %}
     </ul>
 {% endblock %}
