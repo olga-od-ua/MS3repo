@@ -23,7 +23,7 @@
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     <li><a href="#">All recipes</a></li>
                     <li><a href="#">Age groups</a></li>
-                    <li><a href="#">Add a recipe</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                     <li><a href="#">Search</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
@@ -41,7 +41,7 @@
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             <li><a href="#">All recipes</a></li>
             <li><a href="#">Age groups</a></li>
-            <li><a href="#">Add a recipe</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% if session.user %}

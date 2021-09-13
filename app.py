@@ -48,7 +48,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("account", username=session["user"]))
-        
+
     return render_template("register.html")
 
 
@@ -65,7 +65,7 @@ def signIn():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
-                    request.form.get("username")))    
+                    request.form.get("username")))
                 return redirect(url_for(
                     "account", username=session["user"]))
             else:
@@ -98,6 +98,11 @@ def signOut():
     flash("You have been signed out")
     session.pop("user")
     return redirect(url_for("signIn"))
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":
