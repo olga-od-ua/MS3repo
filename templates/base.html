@@ -25,10 +25,13 @@
                     <li><a href="#">Age groups</a></li>
                     <li><a href="#">Add a recipe</a></li>
                     <li><a href="#">Search</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('signIn') }}">Sign in</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Account</a></li>
-                    <li><a href="#">Sign out</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                        <li><a href="{{ url_for('signOut') }}">Sign out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('signIn') }}">Sign in</a></li>
+                    {% endif %}
                 </ul>
             </div>
           </nav>
@@ -41,9 +44,13 @@
             <li><a href="#">Add a recipe</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('signIn') }}">Sign in</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Account</a></li>
-            <li><a href="#">Sign out</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                <li><a href="{{ url_for('signOut') }}">Sign out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('signIn') }}">Sign in</a></li>
+            {% endif %}
         </ul>
     </header>
 

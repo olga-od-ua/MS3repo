@@ -47,7 +47,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("account", username=session["user"]))
         
     return render_template("register.html")
 
@@ -62,12 +62,12 @@ def signIn():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))    
+                return redirect(url_for(
+                    "account", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -81,12 +81,23 @@ def signIn():
     return render_template("signIn.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
     # get the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    if session["user"]:
+        return render_template("account.html", username=username)
+
+    return redirect(url_for("signIn"))
+
+
+@app.route("/signOut")
+def signOut():
+    # remove user from session cookie
+    flash("You have been signed out")
+    session.pop("user")
+    return redirect(url_for("signIn"))
 
 
 if __name__ == "__main__":
