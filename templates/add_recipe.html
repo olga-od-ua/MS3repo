@@ -16,26 +16,25 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">supervisor_account</i>
-                <select>
+                <select id="age_group" name="age_group" class="validate" required>
                     <option value="" disabled selected>Select age group</option>
-                    <option value="1">6-9 months</option>
-                    <option value="2">9-12 months</option>
-                    <option value="3">12+ months</option>
+                    {% for category in categories %}
+                        <option value="{{ category.age_group }}">{{ category.age_group }}</option>
+                    {% endfor %}
                 </select>
+                <label for="age_group"></label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">local_dining</i>
-                <select id="meal_type" name="meal_type" type="text" class="validate" required>
+                <select id="meal_type" name="meal_type" class="validate" required>
                     <option value="" disabled selected>Select meal type</option>
-                    <option value="1">Breakfast</option>
-                    <option value="2">Lunch</option>
-                    <option value="3">Dinner</option>
-                    <option value="1">Snack</option>
-                    <option value="2">Finger Food</option>
-                    <option value="3">Drink</option>
+                    {% for meal_type in meal_types %}
+                        <option value="{{ meal_type.meal_type }}">{{ meal_type.meal_type }}</option>
+                    {% endfor %}
                 </select>
+                <label for="meal_type">Meal type</label>
             </div>
         </div>
         <div class="row">
@@ -58,18 +57,13 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">timer</i>
-                <select id="cooking_time" name="cooking_time" type="text" class="validate" required>
+                <select id="cooking_time" name="cooking_time" class="validate" required>
                     <option value="" disabled selected>Select cooking time</option>
-                    <option value="1">Less than 10 minutes</option>
-                    <option value="2">10-20 minutes</option>
-                    <option value="3">20-30 minutes</option>
-                    <option value="1">30-45 minutes</option>
-                    <option value="2">45-60 minutes</option>
-                    <option value="3">1-1.5 hours</option>
-                    <option value="2">1.5-2 hours</option>
-                    <option value="3">2-3 hours</option>
-                    <option value="3">more than 3 hours</option>
+                    {% for time in cooking_time %}
+                        <option value="{{ time.cooking_time }}">{{ time.cooking_time }}</option>
+                    {% endfor %}
                 </select>
+                <label for="cooking_time">Cooking time</label>
             </div>
         </div>
         <div class="row">

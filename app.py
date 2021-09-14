@@ -102,7 +102,12 @@ def signOut():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    categories = mongo.db.categories.find()
+    meal_types = mongo.db.meal_types.find()
+    cooking_time = mongo.db.cooking_time.find()
+    return render_template(
+        "add_recipe.html", categories=categories, meal_types=meal_types,
+        cooking_time=cooking_time)
 
 
 if __name__ == "__main__":
