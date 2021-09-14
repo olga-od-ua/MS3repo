@@ -3,18 +3,85 @@
 
 <h3 class="deep-orange lighten-2 center-align">Add Recipe</h3>
 
-<div class="row">
+<div class="row card-panel orange lighten-5">
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
+                <input id="recipe_name" name="recipe_name" minlength="4" maxlength="50" 
+                    type="text" class="validate" required>
+                <label for="recipe_name">Recipe Name</label>
             </div>
+        </div>
+        <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Telephone</label>
+                <i class="material-icons prefix">supervisor_account</i>
+                <select>
+                    <option value="" disabled selected>Select age group</option>
+                    <option value="1">6-9 months</option>
+                    <option value="2">9-12 months</option>
+                    <option value="3">12+ months</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">local_dining</i>
+                <select id="meal_type" name="meal_type" type="text" class="validate" required>
+                    <option value="" disabled selected>Select meal type</option>
+                    <option value="1">Breakfast</option>
+                    <option value="2">Lunch</option>
+                    <option value="3">Dinner</option>
+                    <option value="1">Snack</option>
+                    <option value="2">Finger Food</option>
+                    <option value="3">Drink</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_bulleted</i>
+                <textarea id="ingredients" name="ingredients"
+                    class="materialize-textarea validate" minlength="3" required></textarea>
+                <label for="ingredients">Ingredients</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">create</i>
+                <textarea id="cooking_instructions" name="cooking_instructions"
+                    class="materialize-textarea validate" minlength="15" required></textarea>
+                <label for="cooking_instructions">Cooking Instructions</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">timer</i>
+                <select id="cooking_time" name="cooking_time" type="text" class="validate" required>
+                    <option value="" disabled selected>Select cooking time</option>
+                    <option value="1">Less than 10 minutes</option>
+                    <option value="2">10-20 minutes</option>
+                    <option value="3">20-30 minutes</option>
+                    <option value="1">30-45 minutes</option>
+                    <option value="2">45-60 minutes</option>
+                    <option value="3">1-1.5 hours</option>
+                    <option value="2">1.5-2 hours</option>
+                    <option value="3">2-3 hours</option>
+                    <option value="3">more than 3 hours</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="material-icons prefix">child_care</i>
+                    <label for="HSE_approved">
+                      <input type="checkbox" id="HSE_approved" name="HSE_approved">
+                      <span class="lever"></span>
+                      Approved
+                    </label>
+                  </div>
             </div>
         </div>
     </form>
