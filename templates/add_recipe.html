@@ -4,7 +4,8 @@
 <h3 class="deep-orange lighten-2 center-align">Add Recipe</h3>
 
 <div class="row card-panel orange lighten-5">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+        <!-- recipe name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
@@ -13,6 +14,7 @@
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
+        <!-- age group -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">supervisor_account</i>
@@ -22,9 +24,10 @@
                         <option value="{{ category.age_group }}">{{ category.age_group }}</option>
                     {% endfor %}
                 </select>
-                <label for="age_group"></label>
+                <label for="age_group">Age Group</label>
             </div>
         </div>
+        <!-- meal type -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">local_dining</i>
@@ -37,6 +40,7 @@
                 <label for="meal_type">Meal type</label>
             </div>
         </div>
+        <!-- ingredients -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_bulleted</i>
@@ -45,7 +49,7 @@
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
-
+        <!-- cooking instructions -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">create</i>
@@ -54,6 +58,7 @@
                 <label for="cooking_instructions">Cooking Instructions</label>
             </div>
         </div>
+        <!-- cooking time -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">timer</i>
@@ -66,16 +71,25 @@
                 <label for="cooking_time">Cooking time</label>
             </div>
         </div>
+        <!-- HSE approval toggle -->
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
                     <i class="material-icons prefix">child_care</i>
                     <label for="HSE_approved">
-                      <input type="checkbox" id="HSE_approved" name="HSE_approved">
-                      <span class="lever"></span>
-                      Approved
+                        <input type="checkbox" id="HSE_approved" name="HSE_approved">
+                        <span class="lever"></span>
+                        Approved by HSE
                     </label>
-                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- submit new recipe form button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light" type="submit">Submit
+                    <i class="material-icons right">add_box</i>
+                </button>
             </div>
         </div>
     </form>
