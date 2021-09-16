@@ -132,7 +132,12 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     meal_types = mongo.db.meal_types.find()
     cooking_time = mongo.db.cooking_time.find()
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template(
+        "edit_recipe.html",
+        recipe=recipe,
+        categories=categories,
+        meal_types=meal_types,
+        cooking_time=cooking_time)
 
 
 if __name__ == "__main__":

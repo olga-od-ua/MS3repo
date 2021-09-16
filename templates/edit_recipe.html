@@ -10,7 +10,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="recipe_name" name="recipe_name" minlength="4" maxlength="50" 
-                    type="text" class="validate" required>
+                    value="{{ recipe.recipe_name }}"type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
@@ -19,9 +19,13 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">supervisor_account</i>
                 <select id="age_group" name="age_group" class="validate" required>
-                    <option value="" disabled selected>Select age group</option>
+                    <option value="" disabled>Select age group</option>
                     {% for category in categories %}
-                        <option value="{{ category.age_group }}">{{ category.age_group }}</option>
+                        {% if category.category_name == recipe.category_name %}
+                            <option value="{{ category.age_group }}" selected>{{ category.age_group }}</option>
+                        {% else %}
+                            <option value="{{ category.age_group }}">{{ category.age_group }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="age_group">Age Group</label>
@@ -32,9 +36,13 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">local_dining</i>
                 <select id="meal_type" name="meal_type" class="validate" required>
-                    <option value="" disabled selected>Select meal type</option>
+                    <option value="" disabled>Select meal type</option>
                     {% for meal_type in meal_types %}
-                        <option value="{{ meal_type.meal_type }}">{{ meal_type.meal_type }}</option>
+                        {% if meal_type.meal_type == recipe.meal_type %}
+                            <option value="{{ meal_type.meal_type }}" selected>{{ meal_type.meal_type }}</option>
+                        {% else %}
+                            <option value="{{ meal_type.meal_type }}">{{ meal_type.meal_type }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="meal_type">Meal type</label>
@@ -45,7 +53,9 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_bulleted</i>
                 <textarea id="ingredients" name="ingredients"
-                    class="materialize-textarea validate" minlength="3" required></textarea>
+                    class="materialize-textarea validate" minlength="3" required>
+                    {{- recipe.ingredients -}}
+                </textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
@@ -54,7 +64,9 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">create</i>
                 <textarea id="cooking_instructions" name="cooking_instructions"
-                    class="materialize-textarea validate" minlength="15" required></textarea>
+                    class="materialize-textarea validate" minlength="15" required>
+                    {{- recipe.cooking_instructions -}}
+                </textarea>
                 <label for="cooking_instructions">Cooking Instructions</label>
             </div>
         </div>
@@ -63,9 +75,13 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">timer</i>
                 <select id="cooking_time" name="cooking_time" class="validate" required>
-                    <option value="" disabled selected>Select cooking time</option>
+                    <option value="" disabled>Select cooking time</option>
                     {% for time in cooking_time %}
-                        <option value="{{ time.cooking_time }}">{{ time.cooking_time }}</option>
+                        {% if time.cooking_time == recipe.cooking_time %}
+                            <option value="{{ time.cooking_time }}" selected>{{ time.cooking_time }}</option>
+                        {% else %}
+                            <option value="{{ time.cooking_time }}">{{ time.cooking_time }}</option>
+                        {% endif%}
                     {% endfor %}
                 </select>
                 <label for="cooking_time">Cooking time</label>
@@ -77,16 +93,21 @@
                 <div class="switch">
                     <i class="material-icons prefix">child_care</i>
                     <label for="HSE_approved">
-                        <input type="checkbox" id="HSE_approved" name="HSE_approved">
-                        <span class="lever"></span>
+                        {% if recipe.HSE_approved == "on" %}
+                            <input type="checkbox" id="HSE_approved" name="HSE_approved" checked>
+                        {% else %}
+                            <input type="checkbox" id="HSE_approved" name="HSE_approved">
+                        {% endif %}
+                            <span class="lever"></span>
                         Approved by HSE
                     </label>
                 </div>
             </div>
         </div>
-        <!-- submit new recipe form button -->
+        <!-- submit/cancel new recipe form button -->
         <div class="row">
             <div class="col s12 center-align">
+                <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn"><i class="material-icons right">cancel</i>Cancel</a>
                 <button class="btn waves-effect waves-light" type="submit">Edit Recipe
                     <i class="material-icons right">edit</i>
                 </button>
