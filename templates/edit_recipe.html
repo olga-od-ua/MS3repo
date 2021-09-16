@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="deep-orange lighten-2 center-align">Edit Recipe</h3>
+
+<div class="row card-panel orange lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <!-- recipe name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="recipe_name" name="recipe_name" minlength="4" maxlength="50" 
+                    type="text" class="validate" required>
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <!-- age group -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">supervisor_account</i>
+                <select id="age_group" name="age_group" class="validate" required>
+                    <option value="" disabled selected>Select age group</option>
+                    {% for category in categories %}
+                        <option value="{{ category.age_group }}">{{ category.age_group }}</option>
+                    {% endfor %}
+                </select>
+                <label for="age_group">Age Group</label>
+            </div>
+        </div>
+        <!-- meal type -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">local_dining</i>
+                <select id="meal_type" name="meal_type" class="validate" required>
+                    <option value="" disabled selected>Select meal type</option>
+                    {% for meal_type in meal_types %}
+                        <option value="{{ meal_type.meal_type }}">{{ meal_type.meal_type }}</option>
+                    {% endfor %}
+                </select>
+                <label for="meal_type">Meal type</label>
+            </div>
+        </div>
+        <!-- ingredients -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_bulleted</i>
+                <textarea id="ingredients" name="ingredients"
+                    class="materialize-textarea validate" minlength="3" required></textarea>
+                <label for="ingredients">Ingredients</label>
+            </div>
+        </div>
+        <!-- cooking instructions -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">create</i>
+                <textarea id="cooking_instructions" name="cooking_instructions"
+                    class="materialize-textarea validate" minlength="15" required></textarea>
+                <label for="cooking_instructions">Cooking Instructions</label>
+            </div>
+        </div>
+        <!-- cooking time -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">timer</i>
+                <select id="cooking_time" name="cooking_time" class="validate" required>
+                    <option value="" disabled selected>Select cooking time</option>
+                    {% for time in cooking_time %}
+                        <option value="{{ time.cooking_time }}">{{ time.cooking_time }}</option>
+                    {% endfor %}
+                </select>
+                <label for="cooking_time">Cooking time</label>
+            </div>
+        </div>
+        <!-- HSE approval toggle -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="material-icons prefix">child_care</i>
+                    <label for="HSE_approved">
+                        <input type="checkbox" id="HSE_approved" name="HSE_approved">
+                        <span class="lever"></span>
+                        Approved by HSE
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- submit new recipe form button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light" type="submit">Edit Recipe
+                    <i class="material-icons right">edit</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
