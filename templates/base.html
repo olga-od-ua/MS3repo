@@ -26,6 +26,9 @@
                     <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                     <li><a href="#">Search</a></li>
                     {% if session.user %}
+                        {% if session.user|lower == "admin"|lower %}
+                            <li><a href="{{ url_for('get_categories') }}">Manage Age Groups</a></li>
+                        {% endif %}
                         <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                         <li><a href="{{ url_for('signOut') }}">Sign out</a></li>
                     {% else %}
@@ -45,6 +48,9 @@
             <li><a href="#">Search</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% if session.user %}
+                {% if session.user|lower == "admin"|lower %}
+                    <li><a href="{{ url_for('get_categories') }}">Manage Age Groups</a></li>
+                {% endif %}
                 <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                 <li><a href="{{ url_for('signOut') }}">Sign out</a></li>
             {% else %}
