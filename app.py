@@ -144,7 +144,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = mongo.db.categories.find()
     meal_types = mongo.db.meal_types.find()
     cooking_time = mongo.db.cooking_time.find()
     return render_template(
@@ -172,13 +172,27 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "age_group": request.form.get("category_name")
+            "age_group": request.form.get("age_group")
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "age_group": request.form.get("age_group")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Successfully Updated")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
 
 
 if __name__ == "__main__":
