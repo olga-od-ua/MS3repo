@@ -25,6 +25,13 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+@app.route("/get_collections")
+def get_collections():
+    collections = list(mongo.db.meal_types.find())
+    categories = list(mongo.db.categories.find())
+    return render_template("home_page.html", collections=collections, categories=categories)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -206,7 +213,7 @@ def edit_category(category_id):
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
-    return redirect(url_for("get_categories")) 
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

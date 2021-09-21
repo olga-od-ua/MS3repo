@@ -20,8 +20,8 @@
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo">Baby Noms</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                    <li><a href="#">All recipes</a></li>
+                    <li><a href="{{ url_for('get_collections') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
                     <li><a href="#">Age groups</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                     <li><a href="#">Search</a></li>
@@ -41,8 +41,8 @@
         
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">Baby Noms</h4></li>
-            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-            <li><a href="#">All recipes</a></li>
+            <li><a href="{{ url_for('get_collections') }}">Home</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
             <li><a href="#">Age groups</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
             <li><a href="#">Search</a></li>
