@@ -29,6 +29,311 @@
 
 
 
+# Baby Noms
+
+[Live project can be viewed here](https://).
+
+The primary goal of the website is to create a platform for recipe storage that is straightforward and easy to use.
+
+The website is aimed at parents of children who start eating solid foods (that is anywhere between 4 and 6 months old) and up until the school age. It is also aimed at any other child caregiver who is willing to find or share a recipe. Users can register and save their favourite recipes.
+
+The recipes can be marked as Approved by The Irish Health Service Executive by users saving the recipe in case they found that recipe on the [HSE](https://www.hse.ie/eng/) website. However, a warning sign will always be informing all users that they will have to check with their child's doctor before giving any food to preserve the safety aspect of using this website.
+
+## UX
+
+UX PROCESS
+
+**The Strategy Plane**
+
+THE RESEARCH PHASE
+
+
+1. The primary goal. 
+Baby Noms website is designed to provide a platform for recipes for babies and children starting from introducing solids age up until school age. The users will be able to register, browse recipes, search for recipes, add new recipes and save their favourite recipes to their profile.
+
+2. The users will be able to see suggested recipe collections such as: collections according to age group, meal type, cooking time etc.. This will help the users locate recipes that will be the most suitable for their needs faster.
+
+3. The business objectives of the website are set to attract new customers and promote The Gift Of The Gab School.
+
+4. The customer's estimated needs are to get recipes quicky and easily, save their favourite recipes and add new ones.
+
+### USER STORIES
+
+The target audience are people of all ages who provide childcare to children from the age of starting solid foods up until the school aged children.
+
+- #### New users
+
+1. 
+
+- #### Returning users
+
+1. 
+
+HOW THIS PROJECT IS DIFFERENT FROM COMPETITORS AND SUBSTITUTES
+
+While there is an abundance of websites with weaning recipes and recipes for children of all ages, not many of them are aiming at recipes shared solely by caregivers. The website provides multiple collections of recipes to choose from in order to help user find the most suitable and most relevant recipes. Some of these collections are: 
+
+ - "Dad's Favourites" (the users add their status or relation to the child in their registration form, so the collection is created from recipes added by Fathers)
+
+  - "Quick Recipes" (created from recipes with cooking time of less than 20 minutes)
+
+  - "Super Quick Recipes" (created from recipes with cooking time of less than 10 minutes)
+
+**The Scope Plane**
+>>>>>>>>>>>>>>>
+The website is planned to have three main releases as identified in the table below in order to unfold new experiences for the users in the future. 
+
+[ScopePlaneTable.pdf](https://github.com/olga-od-ua/my-full-template/files/6836051/ScopePlaneTable.pdf)
+
+
+**The Structure Plane**
+
+The website has the nav bar that will feature six linear menu elements representing the six self-explanatory main sections of the project, namely:
+- Home
+- 
+
+The footer will appear on each of the pages and will have the following information to hand:
+- Copyright
+- Social networks 
+
+Home page will 
+
+In the PC version, the navigation is presented by the Nav bar with inline elements. In the mobile version the navigation is presented by the Burger Icon.
+
+**The Skeleton Plane**
+
+Wireframe can be found [here](https://).
+
+**The Surface Plane**
+
+***Design***
+
+***Colour Scheme***
+
+
+
+***Typography***
+
+ font 
+***Imagery***
+
+1. 
+
+2. As the website is for demonstrational purposes only, watermarks have not been removed.
+
+### Existing Features
+
+1. Interactivity throughout the website.
+
+2. Responsiveness applies to the majority of popular devices.
+
+### Features Left to Implement
+ 
+1. 
+## Technologies Used
+
+### Languages
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://www.javascript.com/)
+
+### Frameworks, Libraries & Programs
+- [Bootstrap 5](https://getbootstrap.com/)
+   Bootstrap was used throughout the website as an aid in ensuring a consistent and responsive styling.
+
+- [Google Fonts](https://fonts.google.com/)
+   Google Fonts was used to import Halvetica font.
+
+- [LunaPic](https://www10.lunapic.com/editor/)
+   LunaPic was used to achieve desired image formats as well as for other imagery editing.
+
+- [Font Awesome](https://fontawesome.com/)
+   Font Awesome was used on some pages of the website to add icons for aesthetic and UX purposes.
+
+- [jQuery](https://jquery.com/)
+   jQuery was used to add short-hand interactivity to some elements.
+
+- [Git](http://git-scm.com/)
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+- [GitHub](https://github.com/)
+   GitHub is used to store the project's code after being pushed from Git.
+
+- [Balsamiq](https://balsamiq.cloud/syvkevx/projects)
+   Balsamiq was used to create the wireframe for this project.
+
+## Testing
+
+All pages of the website, all CSS code and all JavaScript code were validated. The following validation was performed:
+
+- [W3C Markup Validator](https://validator.w3.org/nu/)
+
+  1. Home page contains two warnings about two lacking headings where headings were not intended.
+
+  2. Course Info and Pricing pages have one warning each about the same issue: an empty heading on lines 105 and 72 respectively. These headings are being filled with data coming from the countdown function from index.js.
+
+  3. There were other minor errors (e.g. obsolete closing tags or stray closing tags) which were fixed.
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
+
+   A few minor errors were detected and fixed.
+
+- [JShint](https://jshint.com).
+
+    All code passed the validation with a few minor issues (missed semicolons) that were fixed.
+
+### Testing User Stories from User Experience (UX) Section
+
+- #### Non-corporate new customers
+
+1.
+
+### Further testing
+
+   1. The website was tested on the following browsers: Chrome, Safari, Samsung Internet app, Internet Explorer.
+
+   2. The website was viewed on the following devices: MacBook Pro (main device for website creation), Samsung Galaxy S20, Samsung Galaxy S21, Samsung Galaxy S8, iPhone Xs, iPhone 11 Pro, iPad Pro, Samsung Curved C34H890 34", LG UltraFine 27UL650-W 27", Samsung Q7 QE55Q7FNA 55".
+
+   3. The Let Us Contact Form was tested and is working successfully. You can find the screenshot below:
+
+<img width="1146" alt="screenshotemail" src="https://user-images.githubusercontent.com/70777490/126017389-6fddab89-4f09-46ce-9af2-58a4f5cbd998.png">
+
+   4. Thorough testing was carried out to ensure all website's functionality is correct.
+
+   5. All available friends and family carried out remote testing across multiple devices to share feedback and user experience.
+
+   6. Home page was manually tested:
+   
+   - all links are working and bring the user to the right pages and in some cases to a certain area on that page (e.g. when clicked on Win a trip to Blarney, the user is brought to the bottom of the Pricing page with the trip to Blarney information)
+   - alert message is displayed when clicked on All Irish Accents
+   - user is redirected to the Course Info page and the relevant card is flashing when clicked on General Course, Business Course, Hospitality English, Intensive learning, Individual lessons, Group lessons and First Lesson FREE.
+   - on mobile devices the navbar collapses into burger menu and all elements are visible and aligned neatly.
+
+   7. Course Info page was tested manually and is working as expected:
+   
+   - all Book buttons display an alert message and bring the user to the contact page
+   - all Learn more buttons have their toggle effect
+   - video is playing when started by the user
+   - flashing cards effect is not activated.
+
+   8. Knowledge test was tested manually and thoroughly to ensure its correct functionality. Each question was tested for the following:
+   
+   - if a correct answer is submitted the user is taken to the next question and the previous one is hidden
+   - if a correct answer is submitted the user their current level is being updated
+   - if a correct answer is submitted the user sees the progress bar move and a message in the progress bar displaying
+   - the user's answers trim method is using correctly allowing the user to have white space in their inputs
+   - if a wrong answer is submitted the error message is displayed with the user's achieved level and the book button
+   - if a wrong answer is submitted the user cannot see questions
+   - if a wrong answer is submitted the user cannot see any messages displayed in the progress bar
+   - if the user passes all the 25 questions correctly they receive congratulations message and an invitation to book the course; they will also see a message in the progress bar "You're a star!"
+   
+   9. Pricing page was tested manually and is working as expected:
+   
+   - all the buttons on this page display a relevant alert message and bring the user to the contact page
+   
+   11. About us page was tested manually and is working as expected:
+   
+   - hover over effect is working
+   - when a teacher's image is clicked the animation starts and the relevant audio starts playing
+   - when an already activated teacher's image is clicked the animation stops and the relevant audio pauses
+   - when there is an activated teacher and another teacher's image is clicked the activated one gets deactivated and the most recently clicked image starts the animation and the audio.
+   
+   13. Contact page was tested manually and is working as expected:
+   
+   - hover effect on Contact Us lines is working
+   - Let Us Contact You form is working
+   - "copy" and "print" buttons work on PCs
+   - maps are displaying three locations
+   
+   15. The navbar elements were tested on all pages and redirect to correct pages of the website. The "B" on the very left of the navbar redirects the user to the Home page.
+   
+   16. The footer was tested on all pages and all links are functioning correctly, namely:
+   
+   - catch phrase
+   - the five social media icons
+      
+### Fixed bugs
+
+1. 
+
+### Known bugs
+
+1. 
+
+#### Other
+Not a bug but a few remarks on ..... content.
+
+1. 
+
+
+## Deployment
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+    - Alternatively Click [Here](https://pages.github.com/) for more information.
+3. Scroll down the Settings page until you locate the "Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. Select /root folder and hit save. 
+6. The now published site [link](https://olga-od-ua.github.io/the-gift-of-the-gab/) appears above "Source".
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
+2. To the left of the Gitpod button, click "Code".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", click . To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click . To clone a repository using GitHub CLI, click Use GitHub CLI, then click "copy symbol".
+4. Open Terminal.
+5. Change the current working directory to the location where you want the cloned directory.
+
+Type git clone, and then paste the URL you copied earlier.
+
+```
+$ git clone https://github.com/olga-od-ua/the-gift-of-the-gab.git
+```
+
+Press Enter to create your local clone.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+## Credits
+
+### Content
+
+1. 
+
+### Media
+
+1. 
+
+### Code
+1. 
+
+### Acknowledgements
+
+1. My mentor for professional support and guidance.
+
+2. My husband Kevin for continuous support and encouragement as well as help to think "outside the box".
+
+3. For the constant assistance from my 8 month old daughter Mila who was with me throughout.
 
 
 
@@ -46,31 +351,13 @@
 
 
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome olga-od-ua,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
 To log into the Heroku toolbelt CLI:
 
@@ -117,40 +404,3 @@ We continually tweak and adjust this template to help give you the best experien
 **December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
 ------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
