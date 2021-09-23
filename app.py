@@ -33,6 +33,13 @@ def get_collections():
         "home_page.html", collections=collections, categories=categories)
 
 
+@app.route("/get_age_groups")
+def get_age_groups():
+    categories = list(mongo.db.categories.find())
+    return render_template(
+        "age_groups.html", categories=categories)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
