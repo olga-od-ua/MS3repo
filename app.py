@@ -89,7 +89,7 @@ def signIn():
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
-                    "account", username=session["user"]))
+                    "get_collections", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
