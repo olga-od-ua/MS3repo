@@ -156,7 +156,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "age_group": request.form.get("age_group"),
             "meal_type": request.form.get("meal_type"),
-            "ingredients": request.form.getlist("ingredients"),
+            "ingredients": request.form.get("ingredients"),
             "cooking_instructions": request.form.get("cooking_instructions"),
             "HSE_approved": HSE_approved,
             "cooking_time": request.form.get("cooking_time"),
@@ -164,6 +164,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
+        return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
