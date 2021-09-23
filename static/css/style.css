@@ -10,3 +10,15 @@
     text-align: center;
     padding-right: 35px;
 }
+
+#close {
+    height: 30px;
+    width: 30px;
+}
+
+#close:hover {
+    background: #f4511e;
+    color: black;
+    padding: 5px;
+    box-shadow: 2px 2px 2px rgb(129, 123, 123), 2px -2px 2px rgb(129, 123, 123), -2px -2px 2px rgb(129, 123, 123), -2px 2px 2px rgb(129, 123, 123); /*guidance taken from MDN reference*/
+}
