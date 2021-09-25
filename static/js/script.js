@@ -40,3 +40,13 @@ $(document).ready(function(){
         return false;
     };
 };
+
+function confirmPasswordMatch(){
+    let pswd1 = document.getElementById("password").value;
+    let pswd2 = document.getElementById("confirm-password").value;
+    if (pswd1 != pswd2) {
+        alert("Passwords do not match. Please try again.")
+        return false;
+    } 
+    return true;
+}
