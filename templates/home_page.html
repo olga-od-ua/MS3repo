@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="deep-orange lighten-2 center-align">Welcome to Baby Noms</h3>
+    <h3 class="deep-orange lighten-2 center-align welcome-sign z-depth-2 white-text">Welcome to Baby Noms</h3>
 
-    <h5 class="deep-orange lighten-2 center-align">Browse Meal Types</h5>
+    <h5 class="teal accent-1 center-align z-depth-2 categories-heading">Browse Meal Types</h5>
 
-    <div class="row">
+    <div class="row z-depth-2">
         {% for collection in collections %}
             <div class="col s12 m4">
-                <div class="card blue-grey darken-1">
+                <div class="card teal accent-4">
                     <div class="card-content white-text">
                         <span class="card-title"> {{ collection.meal_type }}</span>
                         <p>description</p>
@@ -21,12 +21,12 @@
         {% endfor %}
     </div>
 
-    <h5 class="deep-orange lighten-2 center-align">Browse Age Groups</h5>
+    <h5 class="teal accent-1 center-align z-depth-2 categories-heading">Browse Age Groups</h5>
 
-    <div class="row">
+    <div class="row z-depth-2">
         {% for category in categories %}
             <div class="col s12 m4">
-                <div class="card blue-grey darken-1">
+                <div class="card teal accent-4">
                     <div class="card-content white-text">
                         <span class="card-title"> {{ category.age_group }}</span>
                         <p>description</p>

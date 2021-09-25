@@ -1,3 +1,30 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand-logo {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-family: Papyrus, Fantasy;
+    font-weight: 600;
+}
+
+.warning-sign {
+    color: #ff8a65;
+}
+
+.welcome-sign {
+    font-family: Papyrus, Fantasy;
+    font-weight: 900;
+    padding: 22px 15px 15px 15px;
+}
+
+.categories-heading{
+    font-family: Papyrus, Fantasy;
+    font-weight: 600;
+    padding: 19px 12px 12px 12px;
+}
+
 .btn-small {
     margin-right: 15px;
 }
@@ -12,13 +39,13 @@
 }
 
 #close {
-    height: 30px;
-    width: 30px;
+    padding: 5px;
 }
 
 #close:hover {
-    background: #f4511e;
+    background: #ffccbc;
     color: black;
-    padding: 5px;
-    box-shadow: 2px 2px 2px rgb(129, 123, 123), 2px -2px 2px rgb(129, 123, 123), -2px -2px 2px rgb(129, 123, 123), -2px 2px 2px rgb(129, 123, 123); /*guidance taken from MDN reference*/
+    font-size: large;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 2px #ff6e40, 2px -2px 2px #ff6e40, -2px -2px 2px #ff6e40, -2px 2px 2px rgb(129, 123, 123); /*guidance taken from MDN reference*/
 }

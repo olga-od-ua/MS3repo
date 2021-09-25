@@ -114,7 +114,10 @@ Wireframe can be found [here](https://).
 
 ***Typography***
 
- font 
+Arial, Helvetica, sans-serif was selected for the majority of the website content to create a clean, informal, minimalistic look.
+ 
+Papyrus font of Fantasy font family was chosen for all the headings to create a playful tone.
+
 ***Imagery***
 
 1. 
