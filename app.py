@@ -69,8 +69,9 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("account", username=session["user"]))
-
-    return render_template("register.html")
+    
+    statuses = mongo.db.statuses.find()
+    return render_template("register.html", statuses=statuses)
 
 
 @app.route("/signIn", methods=["GET", "POST"])
@@ -129,7 +130,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "age_group": request.form.get("age_group"),
             "meal_type": request.form.get("meal_type"),
-            "ingredients": request.form.getlist("ingredients"),
+            "ingredients": request.form.get("ingredients"),
             "cooking_instructions": request.form.get("cooking_instructions"),
             "HSE_approved": HSE_approved,
             "cooking_time": request.form.get("cooking_time"),

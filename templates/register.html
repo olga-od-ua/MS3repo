@@ -23,8 +23,12 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">face</i>
-                        <input id="status" name="status" type="text" class="validate">
-                        <label for="status">Status (e.g. mother, nurse, granny etc.)</label>
+                        <select id="status" name="status" class="validate" required>
+                            <option value="" disabled selected>Select your status (e.g. mother, father, granny etc.)</option>
+                            {% for status in statuses %}
+                                <option value="{{ status.status }}">{{ status.status }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
                 <div class="row">
