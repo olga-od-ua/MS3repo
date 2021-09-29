@@ -26,6 +26,7 @@ def get_collections():
     return render_template(
         "home_page.html", collections=collections, categories=categories)
 
+
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
@@ -69,7 +70,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("account", username=session["user"]))
-    
+
     statuses = mongo.db.statuses.find()
     return render_template("register.html", statuses=statuses)
 
@@ -183,6 +184,13 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
     return redirect(url_for("get_recipes"))
+
+
+@app.route("/save_recipe")
+def save_recipe(request):
+    if request.user.is_authenticated():
+        flash("Recipe Added to Your Collection")
+    return render_template("account.html")
 
 
 @app.route("/get_categories")

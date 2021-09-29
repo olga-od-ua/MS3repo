@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../assets/images/avocados.jpeg);
+    background-image: url(../images/avocados.jpeg);
 }
 
 .brand-logo {
@@ -28,6 +28,15 @@ body {
 
 .btn-small {
     margin-right: 15px;
+}
+
+.recipe-view {
+    line-height: 30px;
+}
+
+.recipe-heading {
+    font-weight: bolder;
+    color: #009688;
 }
 
 .page-footer {
