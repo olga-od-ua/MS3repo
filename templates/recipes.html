@@ -35,11 +35,13 @@
                     {% endif %}
                 </div>
                 <div class="col s9">
-                    {% if recipe.HSE_approved == "on" %}
-                        <i class="material-icons prefix tooltipped" data-position="top" data-tooltip="Approved by HSE">child_care</i>
-                    {% endif %}
-                    <strong>{{ recipe.recipe_name }}</strong><br>
-                    {{ recipe.age_group }}
+                    <div class="recipe-name">
+                        {% if recipe.HSE_approved == "on" %}
+                            <i class="material-icons prefix tooltipped" data-position="top" data-tooltip="Approved by HSE">child_care</i>
+                        {% endif %}
+                        {{ recipe.recipe_name }}
+                    </div>
+                    <div>{{ recipe.age_group }}</div>
                 </div>
 
                 

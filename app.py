@@ -186,11 +186,15 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-@app.route("/save_recipe")
-def save_recipe(request):
-    if request.user.is_authenticated():
-        flash("Recipe Added to Your Collection")
-    return render_template("account.html")
+@app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
+def save_recipe(recipe_id):
+    if "user" in session:
+        flash("Recipe successfully added to Your Favourites!")
+        return redirect(url_for("get_recipes"))
+
+    else:
+        flash("Please sign in to save recipes to your collection")
+        return render_template("signIn.html")
 
 
 @app.route("/get_categories")

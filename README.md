@@ -1,34 +1,3 @@
-# USER STORIES
-## New Users
-1. I am Rebecca and I am a new mother to a 6 month old baby. It is time to start introducing solid foods to my baby but I have no idea where to start.
-
-2. I am Stacy and I am a mother to a 5 month old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and their babies loved.
-
-3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives and see if there are any recipes that I would be able to cook for our whole family.
-
-4. I am Clare and I love cooking for my 9 month old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
-
-5. I am Chris, a dad to 15 month old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutricious recipes to cook for them.
-
-6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
-
-7. I am Julie, a new mother and I am looking for recipes to cook for my 8 month old girl. I am only looking for recipes that are approved by healthcare professionals.
-
-## Frequent Users
-
-1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
-
-2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook meals for their kids just like their Granny does.
-
-## Returning Users
-1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
-
-2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been adviced by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
-
-
-
-
-
 # Baby Noms
 
 [Live project can be viewed here](https://).
@@ -47,7 +16,6 @@ UX PROCESS
 
 THE RESEARCH PHASE
 
-
 1. The primary goal. 
 Baby Noms website is designed to provide a platform for recipes for babies and children starting from introducing solids age up until school age. The users will be able to register, browse recipes, search for recipes, add new recipes and save their favourite recipes to their profile.
 
@@ -61,13 +29,34 @@ Baby Noms website is designed to provide a platform for recipes for babies and c
 
 The target audience are people of all ages who provide childcare to children from the age of starting solid foods up until the school aged children.
 
-- #### New users
+## New Users
+1. I am Rebecca and I am a new mother to a 6 month old baby. It is time to start introducing solid foods to my baby but I want to see what other parents cook for their babies.
 
-1. 
+2. I am Stacy and I am a mother to a 5 month old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and loved.
 
-- #### Returning users
+3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
 
-1. 
+4. I am Claire and I love cooking for my 9 month old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+
+5. I am Chris, a dad to 15 month old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutricious recipes to cook for them.
+
+6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
+
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8 month old girl. I am only looking for recipes that are approved by healthcare professionals.
+
+8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can then share them with my children so that they can cook "like their Granny" does.
+
+## Frequent Users
+
+1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
+
+2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook my recipes for their kids. Today I have a new recipe to add.
+
+## Returning Users
+1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
+
+2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been adviced by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+
 
 HOW THIS PROJECT IS DIFFERENT FROM COMPETITORS AND SUBSTITUTES
 
@@ -129,6 +118,7 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 1. Interactivity throughout the website.
 
 2. Responsiveness applies to the majority of popular devices.
+
 
 ### Features Left to Implement
  
@@ -267,7 +257,9 @@ All pages of the website, all CSS code and all JavaScript code were validated. T
 #### Other
 Not a bug but a few remarks on ..... content.
 
-1. 
+1. Users are not automatically signed out when the window closes for the convenience of not having to log in every time the user opens the website. The majority of users of the website are parents or other childminders, which means that any opportunity to save their time will be appreciated. When the user clicks on the close the website button, he/she will be prompted to sign out if the want to. The forced sign out is not implemented as there is no sensitive information displayed about the user on any of the website pages.
+
+2. Health warning message appears at the top of every page. It can be closed but it reappears evey time the user is redirected to another page. At first the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep remindind the user that they should contact their GP for advice when feeding their children.
 
 
 ## Deployment

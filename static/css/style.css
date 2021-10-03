@@ -30,6 +30,10 @@ body {
     margin-right: 15px;
 }
 
+.recipe-name {
+    font-weight: bolder;
+}
+
 .recipe-view {
     line-height: 30px;
 }
