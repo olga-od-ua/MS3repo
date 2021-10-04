@@ -261,6 +261,7 @@ Not a bug but a few remarks on ..... content.
 
 2. Health warning message appears at the top of every page. It can be closed but it reappears evey time the user is redirected to another page. At first the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep remindind the user that they should contact their GP for advice when feeding their children.
 
+3. During the development the author included confirm-password input into the Register template without realizing that it gets stored in the Database without any hashing. This security flaw was noticed and rectified.
 
 ## Deployment
 
