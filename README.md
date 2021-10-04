@@ -132,6 +132,12 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 - [JavaScript](https://www.javascript.com/)
 
 ### Frameworks, Libraries & Programs
+
+- [cloudinary](https://cloudinary.com/)
+   Cloudinary was used for storing images used for the website styling.
+
+
+
 - [Bootstrap 5](https://getbootstrap.com/)
    Bootstrap was used throughout the website as an aid in ensuring a consistent and responsive styling.
 
@@ -248,16 +254,43 @@ All pages of the website, all CSS code and all JavaScript code were validated. T
       
 ### Fixed bugs
 
-1. 
+1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encounteered tthat was not letting the image load. The image in question is /workspace/MS3repo/assets/images/avocados.jpeg. The following methods were tried:
+
+a. body { 
+    background: url(/images/avocados.jpeg) repeat 0 0;
+}
+
+b. body { 
+            background: url("images/avocados.jpeg") repeat 0 0;
+        }
+
+c. body { 
+            background: url("../images/avocados.jpeg") repeat 0 0;
+        }
+
+d. body { 
+            background-image: url("../images/avocados.jpeg") repeat 0 0;
+        }
+
+e. tried setting min-height: 100%;
+
+f. tried setting background-size: 25px 25px;
+
+g. tried adding the styling directly to the body element in base.html file using the style="" attribute
+
+h. 
+ 
 
 ### Known bugs
 
-1. 
+Due to the time constraints the following detected bugs have been fixed yet:
+
+1. When a signed-in user tries to share the link to his/her profile, KeyError: 'user' appears when another user tries to follow that link.
 
 #### Other
-Not a bug but a few remarks on ..... content.
+Not a bug but a few remarks on the functionality of the website.
 
-1. Users are not automatically signed out when the window closes for the convenience of not having to log in every time the user opens the website. The majority of users of the website are parents or other childminders, which means that any opportunity to save their time will be appreciated. When the user clicks on the close the website button, he/she will be prompted to sign out if the want to. The forced sign out is not implemented as there is no sensitive information displayed about the user on any of the website pages.
+1. Users are not automatically signed out when the window closes for the convenience of not having to log in every time the user opens the website. The majority of users of the website are parents or other childminders, which means that any opportunity to save their time will be appreciated. It was initially planned to have a function that would ask the user whether they forgot to sign out when the user would leave the page. However, after a thorough research, no reliable method to implement such a warning was found. The forced sign out is not currently implemented as there is no sensitive information displayed about the user on any of the website pages. It is planeed to review this feature in the future for possible solutions to improve the website's security.
 
 2. Health warning message appears at the top of every page. It can be closed but it reappears evey time the user is redirected to another page. At first the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep remindind the user that they should contact their GP for advice when feeding their children.
 
@@ -318,10 +351,11 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ### Media
 
-1. 
+1. The Avocado image used for the background of the templates was taken from [here](
+https://wallpapercave.com/avocado-desktop-wallpapers)
 
 ### Code
-1. 
+1. Footer positioning was borrowed from the following StackOverflow [post](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b).
 
 ### Acknowledgements
 

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="deep-orange lighten-2 center-align">All Recipes</h3>
+    <h3 class="deep-orange lighten-2 center-align z-depth-3 white-text">All Recipes</h3>
 
-    <div class="row">
+    <div class="row white z-depth-3">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
@@ -22,7 +22,7 @@
     </div>
 
     {% if recipes|length > 0 %}
-    <ul class="collapsible">
+    <ul class="collapsible z-depth-3">
         {% for recipe in recipes %}
         <li>
             <div class="collapsible-header deep-orange lighten-2">

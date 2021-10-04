@@ -1,6 +1,15 @@
+html {
+    min-height: 100vh;
+    height: 100vh;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../images/avocados.jpeg);
+    background: url("https://res.cloudinary.com/djaujigfg/image/upload/v1633357986/avocados_uahtsc.jpg") repeat center center fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex; 
+    flex-direction: column; 
 }
 
 .brand-logo {
@@ -18,9 +27,17 @@ body {
     font-family: Papyrus, Fantasy;
     font-weight: 900;
     padding: 22px 15px 15px 15px;
+    border: 1.5px solid white;
 }
 
 .categories-heading{
+    font-family: Papyrus, Fantasy;
+    font-weight: 600;
+    padding: 19px 12px 12px 12px;
+}
+
+h3 {
+    background-color: #ff8a65;
     font-family: Papyrus, Fantasy;
     font-weight: 600;
     padding: 19px 12px 12px 12px;
@@ -63,4 +80,9 @@ body {
     font-size: large;
     padding: 5px 5px 5px 5px;
     box-shadow: 2px 2px 2px #ff6e40, 2px -2px 2px #ff6e40, -2px -2px 2px #ff6e40, -2px 2px 2px rgb(129, 123, 123); /*guidance taken from MDN reference*/
+}
+
+footer {
+    min-height: 50px;
+    margin-top: auto;
 }

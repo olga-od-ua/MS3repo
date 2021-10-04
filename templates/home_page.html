@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="deep-orange lighten-2 center-align welcome-sign z-depth-2 white-text">Welcome to Baby Noms</h3>
+    <h3 class="deep-orange lighten-2 center-align welcome-sign z-depth-3 white-text">Welcome to Baby Noms</h3>
 
-    <h5 class="teal accent-1 center-align z-depth-2 categories-heading">Browse Meal Types</h5>
+    <h5 class="teal accent-1 center-align z-depth-3 categories-heading">Browse Meal Types</h5>
 
-    <div class="row z-depth-2">
+    <div class="row white z-depth-2">
         {% for collection in collections %}
             <div class="col s12 m4">
                 <div class="card teal accent-4">
@@ -21,9 +21,9 @@
         {% endfor %}
     </div>
 
-    <h5 class="teal accent-1 center-align z-depth-2 categories-heading">Browse Age Groups</h5>
+    <h5 class="teal accent-1 center-align z-depth-3 categories-heading">Browse Age Groups</h5>
 
-    <div class="row z-depth-2">
+    <div class="row white z-depth-2">
         {% for category in categories %}
             <div class="col s12 m4">
                 <div class="card teal accent-4">
