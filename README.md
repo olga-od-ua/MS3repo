@@ -347,7 +347,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ### Content
 
-1. 
+1. Some recipes were taken from [Annabel Karmel's weaning guide](https://www.annabelkarmel.com/recipe-category/baby-recipes/)
 
 ### Media
 
