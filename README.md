@@ -181,7 +181,7 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 2. The following warning was displayed: "61 The value break-word is deprecated", however, break-word property is needed for responsive styling purposes.
 
-- [JShint](https://jshint.com).
+3. [JShint](https://jshint.com).
 
     All code passed the validation with one minor issue (missed semicolons) that was fixed.
 
@@ -369,6 +369,8 @@ Please find screenshots below:
 
 1. Some recipes were taken from [Annabel Karmel's weaning guide](https://www.annabelkarmel.com/recipe-category/baby-recipes/).
 
+2. Other recipes were taken from [BBC Good Food](https://www.bbcgoodfood.com/recipes). 
+
 ### Media
 
 1. The Avocado image used for the background of the templates was taken from [here](
@@ -377,7 +379,11 @@ https://wallpapercave.com/avocado-desktop-wallpapers).
 2. The avocado favicon image was taken from [PNGEGG website](https://www.pngegg.com/en/png-eiayq).
 
 ### Code
-1. Footer positioning was borrowed from the following StackOverflow [post](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b).
+1. The majority of the website's functionality was built relying on the Code Institute's study materials.
+
+2. category_recipes, _add_view_on_recipe functions was built with guidance from Andrij Derkach.
+
+3. Some other borrowed code blocks or ideas are mentioned in comments of the templates and the app.py file. I am Ukrainian and speak both Ukrainian and Russian so some of the sources are in my native languages.
 
 ### Acknowledgements
 

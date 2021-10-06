@@ -42,6 +42,7 @@ def get_recipes():
     __request_default_route()
 
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
+    # code borrowed from
     # https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/
     json_data = dumps(recipes, )
 
@@ -188,21 +189,13 @@ def get_age_groups():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     __request_default_route()
-    # print("!!!!!  SEARcH   !!!!!!")
 
     json_data = request.form.get('json_data')
     query = request.form.get('query')
     title_to_pass = request.form.get('title_to_pass')
 
     json_data = loads(json_data)  # convert from json-string into json-object
-    json_to_pass_data = dumps(json_data)  # Передається далі в шаблон
-
-    # allow to search
-    # mongo.db.recipes.create_index([
-    #    ("cooking_instructions", "text"),
-    #   ("ingredients", "text"),
-    #   ("meal_type", "text"),
-    #    ("recipe_name", "text")])
+    json_to_pass_data = dumps(json_data)  # passed to template
 
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
@@ -509,10 +502,6 @@ def _add_view_on_recipe():
 
 def __request_default_route():
     pass
-    # if not request.script_root:
-    # from StackOverflow
-    # this assumes that the 'index' view function handles the path '/'
-    #    request.script_root = url_for('index', _external=True)
 
 
 if __name__ == "__main__":

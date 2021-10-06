@@ -1,23 +1,20 @@
-
 {% extends "base.html" %}
 {% block content %}
     <script>
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-        /*alert($SCRIPT_ROOT)*/
     </script>
     <script>
+        /** ideas and information taken from below sources:
         /** https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/ */
         /** https://uk.wikipedia.org/wiki/AJAX */
         /** https://www.w3schools.com/jquery/jquery_ref_selectors.asp */
         /** https://hruks.ru/2020/05/03/ajax-%D0%B8-jquery-flask-1-1-2-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80/ */
 
         
-        
         $(document).ready(function() {
             $('i.material-icons').bind('click', function(){
                 
                 /*Get Id of clicked element*/
-                /*alert(event.target.id)*/
                 $.getJSON($SCRIPT_ROOT + '_add_view_on_recipe', {
                     id_recipe: event.target.id,
                     
@@ -27,9 +24,8 @@
                 return true;
             });
         
-            /* https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/ */
+            /* idea borrowed from https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/ */
             let json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
-            /*console.log(json_recipes);*/
             
             $("#json_data").val(JSON.stringify(json_recipes));
 
