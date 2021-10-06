@@ -363,16 +363,24 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Unpacking objects: 100% (10/10), done.
 ```
 
+## Database 
+
+NB: Initially "Categories" collection had a different role in the project. It would have been more logical to call "Categories" collection "Age Groups" as it only contains Age Groups information in it.
+
+Please find screenshots [here]()
+
 ## Credits
 
 ### Content
 
-1. Some recipes were taken from [Annabel Karmel's weaning guide](https://www.annabelkarmel.com/recipe-category/baby-recipes/)
+1. Some recipes were taken from [Annabel Karmel's weaning guide](https://www.annabelkarmel.com/recipe-category/baby-recipes/).
 
 ### Media
 
 1. The Avocado image used for the background of the templates was taken from [here](
-https://wallpapercave.com/avocado-desktop-wallpapers)
+https://wallpapercave.com/avocado-desktop-wallpapers).
+
+2. The avocado favicon image was taken from [PNGEGG website](https://www.pngegg.com/en/png-eiayq).
 
 ### Code
 1. Footer positioning was borrowed from the following StackOverflow [post](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b).
