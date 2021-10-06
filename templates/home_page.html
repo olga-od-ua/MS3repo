@@ -3,6 +3,22 @@
 
     <h3 class="deep-orange lighten-2 center-align welcome-sign z-depth-3 white-text">Welcome to Baby Noms</h3>
 
+    <div class="row white z-depth-2">
+        {% for unique in unique_categories %}
+            <div class="col s12 m4">
+                <div class="card teal accent-4">
+                    <div class="card-content white-text">
+                        <span class="card-title"> {{ unique.name }}</span>
+                        <p>{{ unique.description }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('category_recipes', category_name=unique.name) }}">See recipes</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
     <h5 class="teal accent-1 center-align z-depth-3 categories-heading">Browse Meal Types</h5>
 
     <div class="row white z-depth-2">
@@ -11,10 +27,10 @@
                 <div class="card teal accent-4">
                     <div class="card-content white-text">
                         <span class="card-title"> {{ collection.meal_type }}</span>
-                        <p>description</p>
+                        <p>{{ collection.description }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">See more</a>
+                        <a href="{{ url_for('category_recipes', category_name=collection.meal_type) }}">See more</a>
                     </div>
                 </div>
             </div>
@@ -29,10 +45,10 @@
                 <div class="card teal accent-4">
                     <div class="card-content white-text">
                         <span class="card-title"> {{ category.age_group }}</span>
-                        <p>description</p>
+                        <p>{{ category.description }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">See more</a>
+                        <a href="{{ url_for('category_recipes', category_name=category.age_group) }}">See more</a>
                     </div>
                 </div>
             </div>

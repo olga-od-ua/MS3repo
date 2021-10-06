@@ -287,6 +287,8 @@ Due to the time constraints the following detected bugs have been fixed yet:
 
 1. When a signed-in user tries to share the link to his/her profile, KeyError: 'user' appears when another user tries to follow that link.
 
+2. The close button on the health warning message slightly moves outside the container on small devices.
+
 #### Other
 Not a bug but a few remarks on the functionality of the website.
 
@@ -295,6 +297,10 @@ Not a bug but a few remarks on the functionality of the website.
 2. Health warning message appears at the top of every page. It can be closed but it reappears evey time the user is redirected to another page. At first the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep remindind the user that they should contact their GP for advice when feeding their children.
 
 3. During the development the author included confirm-password input into the Register template without realizing that it gets stored in the Database without any hashing. This security flaw was noticed and rectified.
+
+4. There was an idea to sort recipes by the number of views but this idea was not implemented in order to give all the recipes equal opportunity to be noticed by users. The most reasonable solution for now was to preserve the alphabetical order.
+
+5. Due to the "Add to favourites" function and showing lits of recipes from different categories (def (category_recipes)) it all went into one commit making it a very large commit. Due to time constraints this could not be prevented. 
 
 ## Deployment
 

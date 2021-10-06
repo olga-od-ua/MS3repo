@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import dumps, loads
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -19,18 +20,175 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    return get_collections()
+
+
 @app.route("/get_collections")
 def get_collections():
     collections = list(mongo.db.meal_types.find())
     categories = list(mongo.db.categories.find())
+    unique_categories = list(mongo.db.unique_categories.find())
+
     return render_template(
-        "home_page.html", collections=collections, categories=categories)
+        "home_page.html",
+        collections=collections,
+        categories=categories,
+        unique_categories=unique_categories)
 
 
 @app.route("/get_recipes")
 def get_recipes():
+    __request_default_route()
+
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
-    return render_template("recipes.html", recipes=recipes)
+    # https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/
+    json_data = dumps(recipes, )
+
+    return render_template(
+        "recipes.html",
+        recipes=recipes,
+        page_title="All recipes",
+        json_data=json_data)
+
+
+@app.route("/category_recipes/<category_name>")
+def category_recipes(category_name):
+    __request_default_route()
+
+    in_meal_type = mongo.db.meal_types.find({"meal_type": str(category_name)})
+
+    if in_meal_type and in_meal_type.count() > 0:
+        recipes = list(
+            mongo.db.recipes.find({"meal_type": str(category_name)}))
+        json_data = dumps(recipes, )
+
+        return render_template(
+            "recipes.html",
+            recipes=recipes,
+            page_title="{} {}".format("Meal type:", str(category_name)),
+            json_data=json_data
+            )
+
+    in_category = mongo.db.categories.find({"age_group": str(category_name)})
+
+    if in_category and in_category.count() > 0:
+        recipes = list(
+            mongo.db.recipes.find({"age_group": str(category_name)}))
+        json_data = dumps(recipes, )
+
+        return render_template(
+            "recipes.html",
+            recipes=recipes,
+            page_title="{} {}".format("Age group:", str(category_name)),
+            json_data=json_data
+            )
+
+    in_unique = mongo.db.unique_categories.find_one(
+        {"name": str(category_name)})
+
+    if in_unique and len(in_unique) > 0:
+        print("In uniques")
+        if in_unique["name"] == "HSE approved recipes":
+            recipes = list(mongo.db.recipes.find({"HSE_approved": "on"}))
+            json_data = dumps(recipes, )
+
+            return render_template(
+                "recipes.html",
+                recipes=recipes,
+                page_title="{}".format("HSE approved"),
+                json_data=json_data
+            )
+
+        if in_unique["name"] == "Super quick recipes":
+            recipes = list(
+                mongo.db.recipes.find(
+                    {"cooking_time": "Less than 10 minutes"}))
+            json_data = dumps(recipes, )
+
+            return render_template(
+                "recipes.html",
+                recipes=recipes,
+                page_title="{} - {}".format(
+                    in_unique["name"], in_unique["description"]),
+                json_data=json_data
+            )
+
+        if in_unique["name"] == "Quick recipes":
+            less_10_minutes_recipes = list(
+                mongo.db.recipes.find(
+                    {"cooking_time": "Less than 10 minutes"}))
+            recipes = list(
+                mongo.db.recipes.find(
+                    {"cooking_time": "10-20 minutes"}))
+            result_recipes = less_10_minutes_recipes + recipes
+            json_data = dumps(result_recipes, )
+
+            return render_template(
+                "recipes.html",
+                recipes=result_recipes,
+                page_title="{} - {}".format(
+                    in_unique["name"], in_unique["description"]),
+                json_data=json_data
+            )
+
+        status = "other"
+
+        def generic_render(status: str, page_title: str):
+            favorite_recipes = __form_status_favorite_recipes(status)
+            json_data = dumps(favorite_recipes, )
+            return render_template(
+                "recipes.html",
+                recipes=favorite_recipes,
+                page_title=page_title,
+                json_data=json_data)
+
+        if in_unique["name"] == "Childminder favourites":
+            status = "professional childminder"
+            return generic_render(status, in_unique["name"])
+        elif in_unique["name"] == "Grandfather's favourites":
+            status = "grandfather"
+            return generic_render(status, in_unique["name"])
+        elif in_unique["name"] == "Grandmas' favourites":
+            status = "grandmother"
+            return generic_render(status, in_unique["name"])
+        elif in_unique["name"] == "Moms' favourites":
+            status = "mother"
+            return generic_render(status, in_unique["name"])
+        elif in_unique["name"] == "Dads' favorites":
+            status = "father"
+            return generic_render(status, in_unique["name"])
+        elif in_unique["name"] == "other":
+            return generic_render(status, in_unique["name"])
+
+    return render_template(
+        "recipes.html",
+        recipes=[],
+        page_title="Fail",
+        json_data=dumps([]))
+
+
+def __form_status_favorite_recipes(status: str) -> list:
+    all_status_users = list(mongo.db.users.find({"status": status}))
+    all_ids = [item['_id'] for item in all_status_users]  # get list ObjectId
+
+    if len(all_ids) > 0:
+        all_favorite_recipes = []
+
+        for item in all_ids:
+            foo = mongo.db.user_favorite_recipes.find_one(
+                {"user_id": ObjectId(item)})
+            if foo:
+                all_favorite_recipes += foo["recipes_id"]
+
+        all_favorite_recipes = set(all_favorite_recipes)  # only unique items
+        all_favorite_recipes = [ObjectId(it) for it in all_favorite_recipes]
+
+        all_favorite_recipes = list(
+            mongo.db.recipes.find(
+                {"_id": {"$in": all_favorite_recipes}}))
+        return all_favorite_recipes
+    return []
 
 
 @app.route("/get_age_groups")
@@ -42,9 +200,40 @@ def get_age_groups():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("query")
+    __request_default_route()
+ 
+    json_data = request.form.get('json_data')
+    query = request.form.get('query')
+    title_to_pass = request.form.get('title_to_pass')
+
+    json_data = loads(json_data)  # convert from json-string into json-object
+    json_to_pass_data = dumps(json_data)
+
+    # allow to search
+    mongo.db.recipes.create_index([
+        ("cooking_instructions", "text"),
+        ("ingredients", "text"),
+        ("meal_type", "text"),
+        ("recipe_name", "text")])
+
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
+
+    search_result = []
+    alloved_ids = [item["_id"] for item in json_data]
+
+    for recipe in recipes:
+        if recipe["_id"] in alloved_ids:
+            search_result.append(recipe)
+    if "Search in:" not in title_to_pass:
+        page_title = "Search in: {}".format(title_to_pass)
+    else:
+        page_title = title_to_pass
+    return render_template(
+        "recipes.html",
+        recipes=search_result,
+        page_title=page_title,
+        json_data=json_to_pass_data
+    )
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -108,11 +297,33 @@ def signIn():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
+    __request_default_route()
+
     # get the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    record = mongo.db.users.find_one(
+        {"username": session["user"]})
+    username = record["username"]
+    user_id = record["_id"]
     if session["user"]:
-        return render_template("account.html", username=username)
+        recipes = []
+
+        favorites = mongo.db.user_favorite_recipes.find_one(
+            {"user_id": user_id})
+        if favorites:
+            favorite_id = favorites['recipes_id']
+
+            for recipe_id in favorite_id:
+                record_recipe = mongo.db.recipes.find_one(
+                    {"_id": ObjectId(recipe_id)})
+
+                if record_recipe:
+                    print(record_recipe)
+                    recipes.append(record_recipe)
+
+        return render_template(
+            "account.html",
+            username=username,
+            favorite_recipes=recipes)
 
     return redirect(url_for("signIn"))
 
@@ -127,33 +338,28 @@ def signOut():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if "user" in session:
-        if request.method == "POST":
-            HSE_approved = "on" if request.form.get("HSE_approved") else "off"
-            recipe = {
-                "recipe_name": request.form.get("recipe_name"),
-                "age_group": request.form.get("age_group"),
-                "meal_type": request.form.get("meal_type"),
-                "ingredients": request.form.get("ingredients"),
-                "cooking_instructions": request.form.get(
-                    "cooking_instructions"),
-                "HSE_approved": HSE_approved,
-                "cooking_time": request.form.get("cooking_time"),
-                "created_by": session["user"]
-            }
-            mongo.db.recipes.insert_one(recipe)
-            flash("Recipe Successfully Added")
-            return redirect(url_for("get_recipes"))
+    if request.method == "POST":
+        HSE_approved = "on" if request.form.get("HSE_approved") else "off"
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "age_group": request.form.get("age_group"),
+            "meal_type": request.form.get("meal_type"),
+            "ingredients": request.form.get("ingredients"),
+            "cooking_instructions": request.form.get("cooking_instructions"),
+            "HSE_approved": HSE_approved,
+            "cooking_time": request.form.get("cooking_time"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
 
-        categories = mongo.db.categories.find()
-        meal_types = mongo.db.meal_types.find()
-        cooking_time = mongo.db.cooking_time.find()
-        return render_template(
-            "add_recipe.html", categories=categories, meal_types=meal_types,
-            cooking_time=cooking_time)
-    else:
-        flash("Please sign in to add a recipe")
-        return render_template("signIn.html")
+    categories = mongo.db.categories.find()
+    meal_types = mongo.db.meal_types.find()
+    cooking_time = mongo.db.cooking_time.find()
+    return render_template(
+        "add_recipe.html", categories=categories, meal_types=meal_types,
+        cooking_time=cooking_time)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -242,6 +448,39 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+
+@app.route("/add_to_favorite")
+def add_to_favorite():
+    recipe_id = request.args.get("recipe_id", None)
+    username = request.args.get("user_id", None)
+
+    user_id = mongo.db.users.find_one({"username": username})['_id']
+
+    existing_record = mongo.db.user_favorite_recipes.find_one(
+        {"user_id": user_id})
+    if existing_record:
+        if recipe_id not in existing_record['recipes_id']:
+            lst = list(existing_record['recipes_id'])
+            lst.append(recipe_id)
+            mongo.db.user_favorite_recipes.update_one(
+                {"user_id": user_id},
+                {"$set": {"recipes_id": lst}}
+            )
+    else:
+        mongo.db.user_favorite_recipes.insert_one(
+            {"user_id": user_id, "recipes_id": [recipe_id]}
+        )
+
+    return redirect(url_for("account", username=username))
+
+
+def __request_default_route():
+    pass
+    # if not request.script_root:
+    # Вирішення проблеми взято з StackOwerflov
+    # this assumes that the 'index' view function handles the path '/'
+    #    request.script_root = url_for('index', _external=True)
 
 
 if __name__ == "__main__":

@@ -1,9 +1,57 @@
+
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="deep-orange lighten-2 center-align z-depth-3 white-text">All Recipes</h3>
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        /*alert($SCRIPT_ROOT)*/
+    </script>
+    <script>
+        /** https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/ */
+        /** https://uk.wikipedia.org/wiki/AJAX */
+        /** https://www.w3schools.com/jquery/jquery_ref_selectors.asp */
+        /** https://hruks.ru/2020/05/03/ajax-%D0%B8-jquery-flask-1-1-2-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80/ */
+
+        
+        
+        $(document).ready(function() {
+            $('i.material-icons').bind('click', function(){
+                
+                /*Get Id of clicked element*/
+                /*alert(event.target.id)*/
+                $.getJSON($SCRIPT_ROOT + '_add_view_on_recipe', {
+                    id_recipe: event.target.id,
+                    
+                }, function(data) {
+                    $("span#views").text(data.views);
+                });
+                return true;
+            });
+        
+            /* https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/ */
+            var json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
+            /*console.log(json_recipes);*/
+            
+            $("#json_data").val(JSON.stringify(json_recipes));
+
+            $("#title_to_pass").val($('#title').text());
+        });
+        
+    </script>
+
+    <h3 class="deep-orange lighten-2 center-align z-depth-3 white-text" id="title">
+        {% if page_title %}
+        {{ page_title }}
+        {% else %}
+        Default title
+        {% endif %}
+    </h3>
 
     <div class="row white z-depth-3">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
+
+            <input type="hidden" name="json_data" id="json_data" value="">
+            <input type="hidden" name="title_to_pass" id="title_to_pass" value="">
+
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
@@ -12,7 +60,7 @@
                     </label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('get_recipes') }}" class="red btn text-shadow">Reset</a>
+                    <a href="{{ url_for('get_recipes', json=json_data) }}" class="red btn text-shadow">Reset</a>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Search
                         <i class="material-icons right">search</i>
                       </button>
@@ -27,8 +75,8 @@
         <li>
             <div class="collapsible-header deep-orange lighten-2">
                 <div class="col s3">
-                    <i class="material-icons">expand_more</i>
-                    <a href="{{ url_for('save_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Save</a>
+                    <i class="material-icons" id="{{recipe._id}}">expand_more</i>
+                    <!--Add to favoutites button-->
                     {% if session.user|lower == recipe.created_by|lower %}
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Edit</a>
                     <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Delete</a>
@@ -46,7 +94,7 @@
 
                 
             </div>
-            <div class="collapsible-body recipe-view">
+            <div class="collapsible-body recipe-view white">
                 <div>
                     <span class="recipe-heading">Meal Type:</span>
                     <span>{{ recipe.meal_type }}</span>
@@ -65,11 +113,24 @@
                 </div>
                 <div>
                     <span class="recipe-heading">Approved by HSE</span>
-                    <span>{{ recipe.HSE_approved}}</span>
+                    <span>
+                        {% if recipe.HSE_approved == "on" %}
+                        <u>yes</u>
+                        {% else %}
+                        <u>no</u>
+                        {% endif %}
+                    </span>
                 </div>
+                
+                <div>
+                    <span class="recipe-heading">Views:</span>
+                    <span id="views">#</span>
+                </div>
+
                 <div>
                     <span><em>Recipe Added by: {{ recipe.created_by }}</em></span>
                 </div>
+                
             </div>
         </li>
         {% endfor %}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/3784920e35.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     {% block styles %}
     {% endblock %}
     <title>Baby Noms</title>
@@ -23,8 +25,9 @@
                     <li><a href="{{ url_for('get_collections') }}">Home</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
                     <li><a href="{{ url_for('get_age_groups') }}">Age groups</a></li>
-                    <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
+
                     {% if session.user %}
+                        <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                         {% if session.user|lower == "admin"|lower %}
                             <li><a href="{{ url_for('get_categories') }}">Manage Age Groups</a></li>
                         {% endif %}
@@ -43,7 +46,9 @@
             <li><a href="{{ url_for('get_collections') }}">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
             <li><a href="{{ url_for('get_age_groups') }}">Age groups</a></li>
+            {% if session.user %}
             <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
+            {% endif %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% if session.user %}
                 {% if session.user|lower == "admin"|lower %}
@@ -84,9 +89,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row">
-                        <div class="col m6 s12 offset-m3">
-                            <h4 class="deep-orange lighten-2 center-align z-depth-3 white-text">{{ message }}</h4>
-                        </div>
+                        <h4 class="center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -109,7 +112,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

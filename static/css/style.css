@@ -20,6 +20,7 @@ body {
 }
 
 .warning-sign {
+    height: fit-content;
     color: #ff8a65;
 }
 
@@ -41,6 +42,35 @@ h3, h4 {
     font-family: Papyrus, Fantasy;
     font-weight: 600;
     padding: 19px 12px 12px 12px;
+}
+
+.card-content {
+    height: 130px;
+    word-break: break-word;
+}
+
+@media (max-width: 1277px){
+    .card-content {
+        height: 190px;
+    }
+}
+
+@media (max-width: 723px){
+    .card-content {
+        height: 195px;
+    }
+}
+
+@media (max-width: 670px){
+    .card-content {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px){
+    .card-content {
+        height: 150px;
+    }
 }
 
 .btn-small {
@@ -70,15 +100,9 @@ h3, h4 {
     padding-right: 35px;
 }
 
-#close {
-    padding: 5px;
-}
-
 #close:hover {
     background: #ffccbc;
     color: black;
-    font-size: large;
-    padding: 5px 5px 5px 5px;
     box-shadow: 2px 2px 2px #ff6e40, 2px -2px 2px #ff6e40, -2px -2px 2px #ff6e40, -2px 2px 2px rgb(129, 123, 123); /*guidance taken from MDN reference*/
 }
 
