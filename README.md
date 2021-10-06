@@ -186,7 +186,7 @@ All pages of the website, all CSS code and all JavaScript code were validated. T
 
 - #### Non-corporate new customers
 
-1.
+1. see [screeshot]()
 
 ### Further testing
 
@@ -367,7 +367,15 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 NB: Initially "Categories" collection had a different role in the project. It would have been more logical to call "Categories" collection "Age Groups" as it only contains Age Groups information in it.
 
-Please find screenshots [here]()
+Please find screenshots below:
+- [Categories/Age Groups](assets/images/mongodb_scrrenshots/Categories-AgeGroups.png)
+- [Cooking Time](assets/images/mongodb_scrrenshots/CookingTime.png)
+- [Meal Types](assets/images/mongodb_scrrenshots/MealTypes.png)
+- [Recipes](assets/images/mongodb_scrrenshots/Recipes.png)
+- [Statuses](assets/images/mongodb_scrrenshots/Statuses.png)
+- [Unique Categories](assets/images/mongodb_scrrenshots/UniqueCategories.png) used for the first section of categories on the Home Page
+- [User Favourite Recipes](assets/images/mongodb_scrrenshots/UserFavouriteRecipes.png)
+- [Users](assets/images/mongodb_scrrenshots/Users.png)
 
 ## Credits
 
