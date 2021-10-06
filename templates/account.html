@@ -20,10 +20,10 @@
                 <div class="collapsible-header deep-orange lighten-2">
                     <div class="col s3">
                         <i class="material-icons" id="{{recipe._id}}">expand_more</i>
-                        <a href="{{ url_for('remove_from_favorite', recipe_id=recipe._id, user_id = session['user']) }}" class="waves-effect waves-red btn-small">Remove</a>
+                        <a href="{{ url_for('remove_from_favorite', recipe_id=recipe._id, user_id = session['user']) }}" class="waves-effect waves-red btn-small delete">Remove</a>
                         {% if session.user|lower == recipe.created_by|lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">Delete</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small delete">Delete</a>
                         {% endif %}
                     </div>
                     <div class="col s9">

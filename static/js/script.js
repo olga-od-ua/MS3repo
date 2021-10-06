@@ -3,6 +3,11 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('select').formSelect();
+    $(".delete").click(function(){
+        if (!confirm("Confirm delete")){
+          return false;
+        }
+      });
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
