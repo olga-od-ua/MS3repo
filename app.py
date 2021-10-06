@@ -201,28 +201,29 @@ def get_age_groups():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     __request_default_route()
- 
+    # print("!!!!!  SEARcH   !!!!!!")
+
     json_data = request.form.get('json_data')
     query = request.form.get('query')
     title_to_pass = request.form.get('title_to_pass')
 
     json_data = loads(json_data)  # convert from json-string into json-object
-    json_to_pass_data = dumps(json_data)
+    json_to_pass_data = dumps(json_data)  # Передається далі в шаблон
 
     # allow to search
-    mongo.db.recipes.create_index([
-        ("cooking_instructions", "text"),
-        ("ingredients", "text"),
-        ("meal_type", "text"),
-        ("recipe_name", "text")])
+    # mongo.db.recipes.create_index([
+    #    ("cooking_instructions", "text"),
+    #   ("ingredients", "text"),
+    #   ("meal_type", "text"),
+    #    ("recipe_name", "text")])
 
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
     search_result = []
-    alloved_ids = [item["_id"] for item in json_data]
+    allowed_ids = [item["_id"] for item in json_data]
 
     for recipe in recipes:
-        if recipe["_id"] in alloved_ids:
+        if recipe["_id"] in allowed_ids:
             search_result.append(recipe)
     if "Search in:" not in title_to_pass:
         page_title = "Search in: {}".format(title_to_pass)
@@ -420,7 +421,8 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "age_group": request.form.get("age_group")
+            "age_group": request.form.get("age_group"),
+            "description": request.form.get("description")
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
@@ -495,10 +497,32 @@ def remove_from_favorite():
     return redirect(url_for("account", username=username))
 
 
+@app.route("/_add_view_on_recipe")
+def _add_view_on_recipe():
+    id_recipe = request.args.get("id_recipe")
+    views_recipe = 0
+
+    recipe = list(mongo.db.recipes.find({"_id": ObjectId(id_recipe)}))
+
+    if recipe and len(recipe) > 0:
+
+        if "views" in recipe[-1]:
+            views_recipe = recipe[-1]["views"]
+
+        mongo.db.recipes.update_one(
+            {"_id": ObjectId(id_recipe)},
+            {"$set": {"views": views_recipe+1}}
+        )
+    print("#### Add view on recipe")
+    print(views_recipe)
+    from flask import jsonify
+    return jsonify(views=views_recipe)
+
+
 def __request_default_route():
     pass
     # if not request.script_root:
-    # from StackOwerflov
+    # from StackOverflow
     # this assumes that the 'index' view function handles the path '/'
     #    request.script_root = url_for('index', _external=True)
 
