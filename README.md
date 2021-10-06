@@ -91,15 +91,15 @@ In the PC version, the navigation is presented by the Nav bar with inline elemen
 
 **The Skeleton Plane**
 
-Wireframe can be found [here](https://).
+Wireframe can be found [here](/workspace/MS3repo/assets/wireframes/MS3Wireframe.pdf).
 
 **The Surface Plane**
 
 ***Design***
+The website is designed in a minimalistic style in order to create the impression of simplicity to the user.
 
 ***Colour Scheme***
-
-
+A mix of deep orange, teal and white are the main colours used throughout the website, creating a vibrant look.
 
 ***Typography***
 
@@ -109,9 +109,7 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 
 ***Imagery***
 
-1. 
-
-2. As the website is for demonstrational purposes only, watermarks have not been removed.
+Avocado favicon and background image were selected to match the teal colour and to represent a healthy food option.  
 
 ### Existing Features
 
@@ -130,6 +128,7 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://www.javascript.com/)
+- 
 
 ### Frameworks, Libraries & Programs
 
@@ -164,23 +163,27 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 
 ## Testing
 
-All pages of the website, all CSS code and all JavaScript code were validated. The following validation was performed:
+All pages of the website, all CSS code, all JavaScript code and Python code were validated. The following validation was performed outside the GitPod environment:
 
 - [W3C Markup Validator](https://validator.w3.org/nu/)
 
   1. Home page contains two warnings about two lacking headings where headings were not intended.
 
-  2. Course Info and Pricing pages have one warning each about the same issue: an empty heading on lines 105 and 72 respectively. These headings are being filled with data coming from the countdown function from index.js.
+  2. All Recipes page contains two warnings about two lacking headings where headings were not intended. As well as Duplicate IDs errors and warnings caused by a loop.
 
-  3. There were other minor errors (e.g. obsolete closing tags or stray closing tags) which were fixed.
+  3. Add Recipe page contains two warnings about two lacking headings where headings were not intended.
+
+  4. Manage Age Groups page contains two warnings about two lacking headings where headings were not intended.
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
 
-   A few minor errors were detected and fixed.
+1. No errors were detected.
+
+2. The following warning was displayed: "61 The value break-word is deprecated", however, break-word property is needed for responsive styling purposes.
 
 - [JShint](https://jshint.com).
 
-    All code passed the validation with a few minor issues (missed semicolons) that were fixed.
+    All code passed the validation with one minor issue (missed semicolons) that was fixed.
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -194,64 +197,47 @@ All pages of the website, all CSS code and all JavaScript code were validated. T
 
    2. The website was viewed on the following devices: MacBook Pro (main device for website creation), Samsung Galaxy S20, Samsung Galaxy S21, Samsung Galaxy S8, iPhone Xs, iPhone 11 Pro, iPad Pro, Samsung Curved C34H890 34", LG UltraFine 27UL650-W 27", Samsung Q7 QE55Q7FNA 55".
 
-   3. The Let Us Contact Form was tested and is working successfully. You can find the screenshot below:
+   3. Thorough testing was carried out to ensure all website's functionality is correct.
 
-<img width="1146" alt="screenshotemail" src="https://user-images.githubusercontent.com/70777490/126017389-6fddab89-4f09-46ce-9af2-58a4f5cbd998.png">
+   4. All available friends and family carried out remote testing across multiple devices to share feedback and user experience.
 
-   4. Thorough testing was carried out to ensure all website's functionality is correct.
+   5. Home page was manually tested:
+   
+   - all links are working and bring the user to the relevant lists of recipes
+   - all the categories of recipes that are present in the Database are listed
 
-   5. All available friends and family carried out remote testing across multiple devices to share feedback and user experience.
+   6. All Recipes page and recipes.html template were tested manually and are working as expected:
+   
+   - all recipes are displayed
+   - search function is working, checking Recipe Name, Ingredients and Cooking Instructions fields. 
+   - when user is signed in, Save button is displayed next to each recipe; as well as Edit and Delete Buttons are displayed next to the recipes which that particular user added.
+   - when clicked on See Recipes on the Home Page and brought to the list of recipes of that particular category, Search shows results of only that particular category as opposed to all recipes.
 
-   6. Home page was manually tested:
-   
-   - all links are working and bring the user to the right pages and in some cases to a certain area on that page (e.g. when clicked on Win a trip to Blarney, the user is brought to the bottom of the Pricing page with the trip to Blarney information)
-   - alert message is displayed when clicked on All Irish Accents
-   - user is redirected to the Course Info page and the relevant card is flashing when clicked on General Course, Business Course, Hospitality English, Intensive learning, Individual lessons, Group lessons and First Lesson FREE.
-   - on mobile devices the navbar collapses into burger menu and all elements are visible and aligned neatly.
+   7. Add Recipe is functioning correctly and only appears when a user is signed in.
 
-   7. Course Info page was tested manually and is working as expected:
-   
-   - all Book buttons display an alert message and bring the user to the contact page
-   - all Learn more buttons have their toggle effect
-   - video is playing when started by the user
-   - flashing cards effect is not activated.
+   - submit button submits the recipe
+   - cancel button redirects to All recipes
+   - all the user input is validated where applicable
 
-   8. Knowledge test was tested manually and thoroughly to ensure its correct functionality. Each question was tested for the following:
+   8. My Favourites page only appears when a user is signed in. It displays the signed in user's name, all the saved recipes with the option to Remove from Favourites.
+
+   9. Sign in page signs the user out and only appears on the navbar when a user is signed in. Once signed in, the user is redirected to the Home page and is welcomed by a message with their name.
+
+   10. Sign Out signs the user out.
    
-   - if a correct answer is submitted the user is taken to the next question and the previous one is hidden
-   - if a correct answer is submitted the user their current level is being updated
-   - if a correct answer is submitted the user sees the progress bar move and a message in the progress bar displaying
-   - the user's answers trim method is using correctly allowing the user to have white space in their inputs
-   - if a wrong answer is submitted the error message is displayed with the user's achieved level and the book button
-   - if a wrong answer is submitted the user cannot see questions
-   - if a wrong answer is submitted the user cannot see any messages displayed in the progress bar
-   - if the user passes all the 25 questions correctly they receive congratulations message and an invitation to book the course; they will also see a message in the progress bar "You're a star!"
+   11. The navbar elements were tested on all pages and redirect to correct pages of the website. The "Baby Noms" logo on the very left of the navbar redirects the user to the All Recipes.
    
-   9. Pricing page was tested manually and is working as expected:
-   
-   - all the buttons on this page display a relevant alert message and bring the user to the contact page
-   
-   11. About us page was tested manually and is working as expected:
-   
-   - hover over effect is working
-   - when a teacher's image is clicked the animation starts and the relevant audio starts playing
-   - when an already activated teacher's image is clicked the animation stops and the relevant audio pauses
-   - when there is an activated teacher and another teacher's image is clicked the activated one gets deactivated and the most recently clicked image starts the animation and the audio.
-   
-   13. Contact page was tested manually and is working as expected:
-   
-   - hover effect on Contact Us lines is working
-   - Let Us Contact You form is working
-   - "copy" and "print" buttons work on PCs
-   - maps are displaying three locations
-   
-   15. The navbar elements were tested on all pages and redirect to correct pages of the website. The "B" on the very left of the navbar redirects the user to the Home page.
-   
-   16. The footer was tested on all pages and all links are functioning correctly, namely:
-   
-   - catch phrase
-   - the five social media icons
+   12. The footer was tested: all links are functioning correctly, namely, the four social media icons
       
+   13. Health warning sign is responsive, appears on each page and can be closed until a page is refreshed.
+
+   14. Register option only appears when there is no signed in user and is functioning correctly. The link to Sign in at the bottom of the Registration form redirects the user to the sign in form.
+
+   15. Sign in option only appears when there is no signed in user and is functioning correctly. The link to Registration form at the bottom of the Sign in form redirects the user to the Registration form.
+
+   16. When Admin is logged in, Manage Age Groups option appears on the Navbar. Admin is able to edit Age Group names, delete them or add a new one.
+
+
 ### Fixed bugs
 
 1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encounteered tthat was not letting the image load. The image in question is /workspace/MS3repo/assets/images/avocados.jpeg. The following methods were tried:
