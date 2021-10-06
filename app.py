@@ -142,7 +142,7 @@ def category_recipes(category_name):
         elif in_unique["name"] == "Moms' favourites":
             status = "mother"
             return generic_render(status, in_unique["name"])
-        elif in_unique["name"] == "Dads' favorites":
+        elif in_unique["name"] == "Dads' favourites":
             status = "father"
             return generic_render(status, in_unique["name"])
         elif in_unique["name"] == "other":

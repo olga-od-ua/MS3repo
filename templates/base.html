@@ -45,15 +45,13 @@
             <li><h4 class="center-align">Baby Noms</h4></li>
             <li><a href="{{ url_for('get_collections') }}">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
+            
             {% if session.user %}
-            <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
-            {% endif %}
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% if session.user %}
+                <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                 {% if session.user|lower == "admin"|lower %}
                     <li><a href="{{ url_for('get_categories') }}">Manage Age Groups</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                <li><a href="{{ url_for('account', username=session['user']) }}">My Favourites</a></li>
                 <li><a href="{{ url_for('signOut') }}">Sign out</a></li>
             {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -65,8 +63,8 @@
     <section class="body">
         <div class="row">
             <div class="col m10 offset-m1">
-              <div class="card">
-                <div class="card-content warning-sign z-depth-3">
+              <div class="card warning-card">
+                <div class="card-content warning-sign z-depth-3 warning-card">
                     <div class="row">
                         <div class="col s12 m11">
                             <span>WARNING:<br>

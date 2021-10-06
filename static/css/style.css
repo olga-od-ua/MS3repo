@@ -49,6 +49,10 @@ h3, h4 {
     word-break: break-word;
 }
 
+.card .card-content {
+    padding: 5px;
+}
+
 @media (max-width: 1277px){
     .card-content {
         height: 190px;
@@ -77,6 +81,9 @@ h3, h4 {
     margin-right: 15px;
 }
 
+.button {
+    display: block;
+}
 .recipe-name {
     font-weight: bolder;
 }
