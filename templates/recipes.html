@@ -28,7 +28,7 @@
             });
         
             /* https://www.reddit.com/r/flask/comments/25zjtb/af_can_someone_show_me_how_to_build_json_object/ */
-            var json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
+            let json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
             /*console.log(json_recipes);*/
             
             $("#json_data").val(JSON.stringify(json_recipes));

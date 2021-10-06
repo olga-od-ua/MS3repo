@@ -24,7 +24,6 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_collections') }}">Home</a></li>
                     <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
-                    <li><a href="{{ url_for('get_age_groups') }}">Age groups</a></li>
 
                     {% if session.user %}
                         <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
@@ -45,7 +44,6 @@
             <li><h4 class="center-align">Baby Noms</h4></li>
             <li><a href="{{ url_for('get_collections') }}">Home</a></li>
             <li><a href="{{ url_for('get_recipes') }}">All recipes</a></li>
-            <li><a href="{{ url_for('get_age_groups') }}">Age groups</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
             {% endif %}
@@ -75,7 +73,7 @@
                             </span>
                         </div>
                         <div class="col">
-                            <span id="close">x</span>
+                            <a id="close" class="btn-floating btn-small deep-orange lighten-1 waves-effect waves-light red"><i class="material-icons">close</i></a>
                         </div>
                     </div>
                 </div>

@@ -289,6 +289,8 @@ Due to the time constraints the following detected bugs have been fixed yet:
 
 2. The close button on the health warning message slightly moves outside the container on small devices.
 
+3. Views of a recipe are added with every click on the materialize icon. This is not the perfect solution as the views are counted every time the collapsible item opens and closes. This means that if a user clicks on the icon to open the collapsible and then clicks on the icon to close the collapsible, 2 views will be added to the recipe.
+
 #### Other
 Not a bug but a few remarks on the functionality of the website.
 
@@ -300,7 +302,19 @@ Not a bug but a few remarks on the functionality of the website.
 
 4. There was an idea to sort recipes by the number of views but this idea was not implemented in order to give all the recipes equal opportunity to be noticed by users. The most reasonable solution for now was to preserve the alphabetical order.
 
-5. 
+5. Due to the "Add to favourites" function and showing lits of recipes from different categories (def (category_recipes)) it all went into one commit making it a very large commit. Due to time constraints this could not be prevented.
+
+6. At the moment Admin can only add, edit and delete age groups. In the future Admin might be given the opportunity to manage other groups of recipes.
+
+7. It was initially planned to have "HSE approved" group of recipes. However, this group was later removed due to health safety. Users are currently given the option of turning the HSE approved toggle on and off meaning that it is not the most trusted source of medical advice. Hence this group of recipes was removed in order not to encourage relying on this group of recipes as the safest ones. In the future the HSE approved switch access may only be assigned to the admin, or a hired medical professional. At the moment this is not feasible.
+
+8. Views count is not fully functioning on pages other than All Recipes.
+
+9. The following lines of code in recipes.html template are displaying errors:
+ - $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+ - let json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
+
+ An attempt was made to fix the error by wrapping the result of tojson in quotes, however this created further errors.
 
 ## Deployment
 

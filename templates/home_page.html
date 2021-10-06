@@ -12,7 +12,7 @@
                         <p>{{ unique.description }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('category_recipes', category_name=unique.name) }}">See recipes</a>
+                        <a class="deep-orange-text text-lighten-4" href="{{ url_for('category_recipes', category_name=unique.name) }}">See recipes</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                         <p>{{ collection.description }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('category_recipes', category_name=collection.meal_type) }}">See recipes</a>
+                        <a class="deep-orange-text text-lighten-4" href="{{ url_for('category_recipes', category_name=collection.meal_type) }}">See recipes</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <p>{{ category.description }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('category_recipes', category_name=category.age_group) }}">See recipes</a>
+                        <a class="deep-orange-text text-lighten-4" href="{{ url_for('category_recipes', category_name=category.age_group) }}">See recipes</a>
                     </div>
                 </div>
             </div>
