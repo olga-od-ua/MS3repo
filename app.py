@@ -475,10 +475,30 @@ def add_to_favorite():
     return redirect(url_for("account", username=username))
 
 
+@app.route("/remove_from_favorite")
+def remove_from_favorite():
+    recipe_id = request.args.get("recipe_id", None)
+    username = request.args.get("user_id", None)
+
+    user_id = mongo.db.users.find_one({"username": username})['_id']
+
+    existing_record = mongo.db.user_favorite_recipes.find_one(
+        {"user_id": user_id})
+    favorite_list = [
+        item for item in existing_record["recipes_id"] if item != recipe_id]
+
+    mongo.db.user_favorite_recipes.update_one(
+        {"user_id": user_id},
+        {"$set": {"recipes_id": favorite_list}}
+    )
+
+    return redirect(url_for("account", username=username))
+
+
 def __request_default_route():
     pass
     # if not request.script_root:
-    # Вирішення проблеми взято з StackOwerflov
+    # from StackOwerflov
     # this assumes that the 'index' view function handles the path '/'
     #    request.script_root = url_for('index', _external=True)
 

@@ -300,7 +300,7 @@ Not a bug but a few remarks on the functionality of the website.
 
 4. There was an idea to sort recipes by the number of views but this idea was not implemented in order to give all the recipes equal opportunity to be noticed by users. The most reasonable solution for now was to preserve the alphabetical order.
 
-5. Due to the "Add to favourites" function and showing lits of recipes from different categories (def (category_recipes)) it all went into one commit making it a very large commit. Due to time constraints this could not be prevented. 
+5. 
 
 ## Deployment
 
