@@ -89,16 +89,6 @@ def category_recipes(category_name):
 
     if in_unique and len(in_unique) > 0:
         print("In uniques")
-        if in_unique["name"] == "HSE approved recipes":
-            recipes = list(mongo.db.recipes.find({"HSE_approved": "on"}))
-            json_data = dumps(recipes, )
-
-            return render_template(
-                "recipes.html",
-                recipes=recipes,
-                page_title="{}".format("HSE approved"),
-                json_data=json_data
-            )
 
         if in_unique["name"] == "Super quick recipes":
             recipes = list(
@@ -143,10 +133,7 @@ def category_recipes(category_name):
                 page_title=page_title,
                 json_data=json_data)
 
-        if in_unique["name"] == "Childminder favourites":
-            status = "professional childminder"
-            return generic_render(status, in_unique["name"])
-        elif in_unique["name"] == "Grandfather's favourites":
+        if in_unique["name"] == "Grandfather's favourites":
             status = "grandfather"
             return generic_render(status, in_unique["name"])
         elif in_unique["name"] == "Grandmas' favourites":
