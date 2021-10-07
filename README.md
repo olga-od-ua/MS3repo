@@ -4,7 +4,7 @@
 
 The primary goal of the website is to create a platform for recipe storage that is straightforward and easy to use.
 
-The website is aimed at parents of children who start eating solid foods (that is anywhere between 4 and 6 months old) and up until the school age. It is also aimed at any other child caregiver who is willing to find or share a recipe. Users can register and save their favourite recipes.
+The website is aimed at parents of children who start eating solid foods (that is anywhere between 4 and 6 months old) and up until school age. It is also aimed at any other child caregiver who is willing to find or share a recipe. Users can register and save their favourite recipes.
 
 The recipes can be marked as Approved by The Irish Health Service Executive by users saving the recipe in case they found that recipe on the [HSE](https://www.hse.ie/eng/) website. However, a warning sign will always be informing all users that they will have to check with their child's doctor before giving any food to preserve the safety aspect of using this website.
 
@@ -23,26 +23,26 @@ Baby Noms website is designed to provide a platform for recipes for babies and c
 
 3. The business objectives of the website are set to attract new customers and promote The Gift Of The Gab School.
 
-4. The customer's estimated needs are to get recipes quicky and easily, save their favourite recipes and add new ones.
+4. The customer's estimated needs are to get recipes quickly and easily, save their favourite recipes and add new ones.
 
 ### USER STORIES
 
-The target audience are people of all ages who provide childcare to children from the age of starting solid foods up until the school aged children.
+The target audience is people of all ages who provide childcare to children from the age of starting solid foods up until school-aged children.
 
 ## New Users
-1. I am Rebecca and I am a new mother to a 6 month old baby. It is time to start introducing solid foods to my baby but I want to see what other parents cook for their babies.
+1. I am Rebecca and I am a new mother to a 6-month-old baby. It is time to start introducing solid foods to my baby but I want to see what other parents cook for their babies.
 
-2. I am Stacy and I am a mother to a 5 month old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and loved.
+2. I am Stacy and I am a mother to a 5-month-old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and loved.
 
 3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
 
-4. I am Claire and I love cooking for my 9 month old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
 
-5. I am Chris, a dad to 15 month old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutricious recipes to cook for them.
+5. I am Chris, a dad to 15-month-old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutritious recipes to cook for them.
 
 6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
 
-7. I am Julie, a new mother and I am looking for recipes to cook for my 8 month old girl. I am only looking for recipes that are approved by healthcare professionals.
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes that are approved by healthcare professionals.
 
 8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can then share them with my children so that they can cook "like their Granny" does.
 
@@ -56,12 +56,12 @@ The target audience are people of all ages who provide childcare to children fro
 
 1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
 
-2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been adviced by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
 
 
 HOW THIS PROJECT IS DIFFERENT FROM COMPETITORS AND SUBSTITUTES
 
-While there is an abundance of websites with weaning recipes and recipes for children of all ages, not many of them are aiming at recipes shared solely by caregivers. The website provides multiple collections of recipes to choose from in order to help user find the most suitable and most relevant recipes. Some of these collections are: 
+While there is an abundance of websites with weaning recipes and recipes for children of all ages, not many of them are aiming at recipes shared solely by caregivers. The website provides multiple collections of recipes to choose from in order to help users find the most suitable and most relevant recipes. Some of these collections are: 
 
 - "Dad's Favourites" (the users add their status or relation to the child in their registration form, so the collection is created from recipes added by Fathers)
 
@@ -75,16 +75,16 @@ The website is planned to have three main releases as identified in the table be
 
 [ScopePlaneTable.pdf](https://github.com/olga-od-ua/MS3repo/tree/main/assets/images/scope_plane_table)
 
-This table shows all the websited existing features in the 1st Release column and Features that are still to be implemented in the 2nd and 3rd Release columns.
+This table shows all the website's existing features in the 1st Release column and Features that are still to be implemented in the 2nd and 3rd Release columns.
 
 **The Structure Plane**
 
-The website has the nav bar that will feature linear menu elements representing the self-explanatory main sections of the project, namely:
+The website has the Navbar that will feature linear menu elements representing the self-explanatory main sections of the project, namely:
 - Home
 - All Recipes
-- Add a Recipe (for signed in users only)
+- Add a Recipe (for signed-in users only)
 - Manage Age Groups (for Admin only)
-- My Favourites (for signed in users only)
+- My Favourites (for signed-in users only)
 - Register (when no user is signed in)
 - Sign in / Sign out
 
@@ -94,7 +94,7 @@ The footer will appear on each of the pages and will have the following informat
 
 Home page will display various categories of recipes with a link to the relevant list of recipes.
 
-In the PC version, the navigation is presented by the Nav bar with inline elements. In the mobile version the navigation is presented by the Burger Icon.
+In the PC version, the navigation is presented by the Navbar with inline elements. In the mobile version the navigation is presented by the Burger Icon.
 
 **The Skeleton Plane**
 
@@ -203,8 +203,8 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
    6. All Recipes page and recipes.html template were tested manually and are working as expected:
    
    - all recipes are displayed
-   - search function is working, checking Recipe Name, Ingredients and Cooking Instructions fields. 
-   - when user is signed in, Save button is displayed next to each recipe; as well as Edit and Delete Buttons are displayed next to the recipes which that particular user added.
+   - search function is working, checking the Recipe Name, Ingredients and Cooking Instructions fields. 
+   - when the user is signed in, the Save button is displayed next to each recipe; as well as Edit and Delete Buttons are displayed next to the recipes which that particular user added.
    - when clicked on See Recipes on the Home Page and brought to the list of recipes of that particular category, Search shows results of only that particular category as opposed to all recipes.
 
    7. Add Recipe is functioning correctly and only appears when a user is signed in.
@@ -213,19 +213,19 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
    - cancel button redirects to All recipes
    - all the user input is validated where applicable
 
-   8. My Favourites page only appears when a user is signed in. It displays the signed in user's name, all the saved recipes with the option to Remove from Favourites.
+   8. My Favourites page only appears when a user is signed in. It displays the signed-in user's name, all the saved recipes with the option to Remove from Favourites.
 
    9. Sign in page signs the user out and only appears on the navbar when a user is signed in. Once signed in, the user is redirected to the Home page and is welcomed by a message with their name.
 
    10. Sign Out signs the user out.
    
-   11. The navbar elements were tested on all pages and redirect to correct pages of the website. The "Baby Noms" logo on the very left of the navbar redirects the user to the All Recipes.
+   11. The Navbar elements were tested on all pages and redirect to the correct pages of the website. The "Baby Noms" logo on the very left of the navbar redirects the user to the All Recipes.
    
    12. The footer was tested: all links are functioning correctly, namely, the four social media icons
       
    13. Health warning sign is responsive, appears on each page and can be closed until a page is refreshed.
 
-   14. Register option only appears when there is no signed in user and is functioning correctly. The link to Sign in at the bottom of the Registration form redirects the user to the sign in form.
+   14. Register option only appears when there is no signed in user and is functioning correctly. The link to Sign in at the bottom of the Registration form redirects the user to the sign-in form.
 
    15. Sign in option only appears when there is no signed in user and is functioning correctly. The link to Registration form at the bottom of the Sign in form redirects the user to the Registration form.
 
@@ -234,7 +234,7 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 ### Fixed bugs
 
-1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encounteered tthat was not letting the image load. The following methods were tried:
+1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encountered that was not letting the image load. The following methods were tried:
 
 a. body { 
     background: url(/images/avocados.jpeg) repeat 0 0;
@@ -274,9 +274,9 @@ Due to the time constraints the following detected bugs have been fixed yet:
 #### Other
 Not a bug but a few remarks on the functionality of the website.
 
-1. Users are not automatically signed out when the window closes for the convenience of not having to log in every time the user opens the website. The majority of users of the website are parents or other childminders, which means that any opportunity to save their time will be appreciated. It was initially planned to have a function that would ask the user whether they forgot to sign out when the user would leave the page. However, after a thorough research, no reliable method to implement such a warning was found. The forced sign out is not currently implemented as there is no sensitive information displayed about the user on any of the website pages. It is planeed to review this feature in the future for possible solutions to improve the website's security.
+1. Users are not automatically signed out when the window closes for the convenience of not having to log in every time the user opens the website. The majority of users of the website are parents or other childminders, which means that any opportunity to save their time will be appreciated. It was initially planned to have a function that would ask the user whether they forgot to sign out when the user would leave the page. However, after thorough research, no reliable method to implement such a warning was found. The forced sign out is not currently implemented as there is no sensitive information displayed about the user on any of the website pages. It is planned to review this feature in the future for possible solutions to improve the website's security.
 
-2. Health warning message appears at the top of every page. It can be closed but it reappears evey time the user is redirected to another page. At first the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep remindind the user that they should contact their GP for advice when feeding their children.
+2. Health warning message appears at the top of every page. It can be closed but it reappears every time the user is redirected to another page. At first, the idea was to give the user the option to only close it once for the duration of the session. However, as irritating as it may be for the user, the decision was made to keep the message reappear in order to keep reminding the user that they should contact their GP for advice when feeding their children.
 
 3. During the development the author included confirm-password input into the Register template without realizing that it gets stored in the Database without any hashing. This security flaw was noticed and rectified.
 
@@ -385,7 +385,7 @@ https://wallpapercave.com/avocado-desktop-wallpapers).
 
 2. My husband Kevin for continuous support and encouragement.
 
-3. For the constant assistance from my 10 month old daughter Mila who was with me throughout and inspired to create the recipes website as she is a proper "foodie".
+3. For the constant assistance from my 11-month-old daughter Mila who was with me throughout and inspired to create the recipes website as she is a proper "foodie".
 
 
 
