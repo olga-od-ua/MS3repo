@@ -34,7 +34,7 @@ The target audience is people of all ages who provide childcare to children from
 
 3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
 
-4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and and self-feeding so I am looking for finger food ideas.
 
 5. I am Chris, a dad to 15-month-old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutritious recipes to cook for them.
 
@@ -188,29 +188,46 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 2. I am Stacy and I am a mother to a 5-month-old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and loved.
 
+   Upon landing on the Home Page Stacy will most probably open Mom's favourite recipes and will continue exploring the recipe ideas in that section. See [screenshot](assets/images/ux_stories_testing/new-user-1a.png).
+
+
 3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
 
-4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+   Upon landing on the Home Page Anna will most probably navigate to Browse by Age Groups Section and will continue exploring there. See [screenshot](assets/images/ux_stories_testing/new-user-3.png).
+
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and and self-feeding so I am looking for finger food ideas.
+
+   Upon landing on the Home Page Claire will most probably navigate to Browse by Meal Type Section and will navigate to Finger Food recipe collection. See [screenshot](assets/images/ux_stories_testing/new-user-4.png).
 
 5. I am Chris, a dad to 15-month-old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutritious recipes to cook for them.
 
+   Upon landing on the Home Page Chris will most probably navigate to Dads' favourites recipe collection. See [screenshot](assets/images/ux_stories_testing/new-user-5.png).
+
 6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
 
-7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes that are approved by healthcare professionals.
+   Upon landing on the Home Page Kate will be able to register (see [screenshot](assets/images/ux_stories_testing/new-user-6a.png)) and then save any recipe to her favourites (see screenshot of [Save to favourites button](assets/images/ux_stories_testing/new-user-6b.png) and [My Favourites view](assets/images/ux_stories_testing/new-user-6c.png))
 
-8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can then share them with my children so that they can cook "like their Granny" does.
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes of this age group. I would also like to be able to search for different ingredients, methods of cooking (e.g. steaming, boil etc.).
+
+   a. Upon landing on the Home page Julie will see various recipe collections available to browse, the 6-9 months age group will most probably attract her attention. See [screenshot](assets/images/ux_stories_testing/new-user-1a.png).
+
+   b. Julie will also be able to search for Ingredients or Cooking instructions and will only get results from her chosen age group. See [screenshot](assets/images/ux_stories_testing/new-user-1b.png).
+
+8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can retrieve them next time I am cooking for my grandkids.
+
+   Upon landing on the Home page Mary will see a very straightforward Navbar menu where she will be able to register (see [screenshot](assets/images/ux_stories_testing/new-user-6a.png)), add recipes (see [screenshot](assets/images/ux_stories_testing/new-user-8a.png)) and save them to her favourites. She will then be able to open her favourite recipes from My Favourites page (see [screenshot](assets/images/ux_stories_testing/new-user-8b.png)).
 
 ## Frequent Users
 
-1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
+9. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
 
-2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook my recipes for their kids. Today I have a new recipe to add.
+   Upon reopning of the website Barbara will be logged in from her previous session. She will be able to retrieve her saved recipes by going into My Favourites page.
 
 ## Returning Users
 
-1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
+10. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
 
-2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+11. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
 
 ### Further testing
 
@@ -320,6 +337,8 @@ Not a bug but a few remarks on the functionality of the website.
 9. The following lines of code in recipes.html template are displaying errors:
  - $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
  - let json_recipes = jQuery.parseJSON({{json_data | tojson | safe}});
+
+ 10. Currently Dads' Favourites, Mom's Favourites, Grandma's Favourites and Grandfather's Favourites are displaying recipes that users with the relevant status (i.e. Father, Mother, Grandmother and Grandfather respectively) saved to their favourites. Currently a recipe gets added to such a collection even when only one user saves it. It would be better to create such Favourite Recipes collections when more than one user adds recipes to their Favourites (e.g. Only after 20 Fathers added Chicken Footballs to their favourites, this recipe goes to the Dads' Favourites collection).
 
  An attempt was made to fix the error by wrapping the result of tojson in quotes, however this created further errors.
 
