@@ -40,21 +40,19 @@ The target audience is people of all ages who provide childcare to children from
 
 6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
 
-7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes that are approved by healthcare professionals.
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes of this age group. I would also like to be able to search for different ingredients, methods of cooking (e.g. steaming, boil etc.).
 
-8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can then share them with my children so that they can cook "like their Granny" does.
+8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can retrieve them next time I am cooking for my grandkids.
 
 ## Frequent Users
 
-1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
-
-2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook my recipes for their kids. Today I have a new recipe to add.
+9. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
 
 ## Returning Users
 
-1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
+10. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
 
-2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+11. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
 
 
 HOW THIS PROJECT IS DIFFERENT FROM COMPETITORS AND SUBSTITUTES
@@ -317,7 +315,7 @@ Due to the time constraints the following detected bugs have been fixed yet:
 
 2. The close button on the health warning message slightly moves outside the container on small devices.
 
-3. Views of a recipe are added with every click on the materialize icon. This is not the perfect solution as the views are counted every time the collapsible item opens and closes. This means that if a user clicks on the icon to open the collapsible and then clicks on the icon to close the collapsible, 2 views will be added to the recipe.
+3. Views of a recipe are added with every click on the materialize icon. This is not the perfect solution as the views are counted every time the collapsible item opens and closes. This means that if a user clicks on the icon to open the collapsible and then clicks on the icon to close the collapsible, 2 views will be added to the recipe. Views are not displayed when a certain recipe collection is listed.
 
 4. When opening the Edit Recipe form, each recipe's Age Group is changed to 0+ months regardless of what age group it had belonged before.
 
@@ -451,73 +449,3 @@ https://wallpapercave.com/avocado-desktop-wallpapers).
 2. My husband Kevin for continuous support and encouragement.
 
 3. For the constant assistance from my 11-month-old daughter Mila who was with me throughout and inspired to create the recipes website as she is a proper "foodie".
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
