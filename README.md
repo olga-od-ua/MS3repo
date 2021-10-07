@@ -53,6 +53,7 @@ The target audience are people of all ages who provide childcare to children fro
 2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook my recipes for their kids. Today I have a new recipe to add.
 
 ## Returning Users
+
 1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
 
 2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been adviced by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
@@ -62,30 +63,36 @@ HOW THIS PROJECT IS DIFFERENT FROM COMPETITORS AND SUBSTITUTES
 
 While there is an abundance of websites with weaning recipes and recipes for children of all ages, not many of them are aiming at recipes shared solely by caregivers. The website provides multiple collections of recipes to choose from in order to help user find the most suitable and most relevant recipes. Some of these collections are: 
 
- - "Dad's Favourites" (the users add their status or relation to the child in their registration form, so the collection is created from recipes added by Fathers)
+- "Dad's Favourites" (the users add their status or relation to the child in their registration form, so the collection is created from recipes added by Fathers)
 
-  - "Quick Recipes" (created from recipes with cooking time of less than 20 minutes)
+- "Quick Recipes" (created from recipes with cooking time of less than 20 minutes)
 
-  - "Super Quick Recipes" (created from recipes with cooking time of less than 10 minutes)
+- "Super Quick Recipes" (created from recipes with cooking time of less than 10 minutes)
 
 **The Scope Plane**
->>>>>>>>>>>>>>>
+
 The website is planned to have three main releases as identified in the table below in order to unfold new experiences for the users in the future. 
 
-[ScopePlaneTable.pdf](https://github.com/olga-od-ua/my-full-template/files/6836051/ScopePlaneTable.pdf)
+[ScopePlaneTable.pdf](https://github.com/olga-od-ua/MS3repo/tree/main/assets/images/scope_plane_table)
 
+This table shows all the websited existing features in the 1st Release column and Features that are still to be implemented in the 2nd and 3rd Release columns.
 
 **The Structure Plane**
 
-The website has the nav bar that will feature six linear menu elements representing the six self-explanatory main sections of the project, namely:
+The website has the nav bar that will feature linear menu elements representing the self-explanatory main sections of the project, namely:
 - Home
-- 
+- All Recipes
+- Add a Recipe (for signed in users only)
+- Manage Age Groups (for Admin only)
+- My Favourites (for signed in users only)
+- Register (when no user is signed in)
+- Sign in / Sign out
 
 The footer will appear on each of the pages and will have the following information to hand:
 - Copyright
 - Social networks 
 
-Home page will 
+Home page will display various categories of recipes with a link to the relevant list of recipes.
 
 In the PC version, the navigation is presented by the Nav bar with inline elements. In the mobile version the navigation is presented by the Burger Icon.
 
@@ -111,16 +118,6 @@ Papyrus font of Fantasy font family was chosen for all the headings to create a 
 
 Avocado favicon and background image were selected to match the teal colour and to represent a healthy food option.  
 
-### Existing Features
-
-1. Interactivity throughout the website.
-
-2. Responsiveness applies to the majority of popular devices.
-
-
-### Features Left to Implement
- 
-1. 
 ## Technologies Used
 
 ### Languages
@@ -128,23 +125,20 @@ Avocado favicon and background image were selected to match the teal colour and 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://www.javascript.com/)
-- 
+- [Python](https://www.python.org/)
 
 ### Frameworks, Libraries & Programs
 
-- [cloudinary](https://cloudinary.com/)
-   Cloudinary was used for storing images used for the website styling.
+- [Cloudinary](https://cloudinary.com/)
+   Cloudinary was used for storing images used for the website's favicon and background image.
 
-
-
-- [Bootstrap 5](https://getbootstrap.com/)
-   Bootstrap was used throughout the website as an aid in ensuring a consistent and responsive styling.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
 - [Google Fonts](https://fonts.google.com/)
    Google Fonts was used to import Halvetica font.
 
 - [LunaPic](https://www10.lunapic.com/editor/)
-   LunaPic was used to achieve desired image formats as well as for other imagery editing.
+   LunaPic was used to achieve the desired favicon image format.
 
 - [Font Awesome](https://fontawesome.com/)
    Font Awesome was used on some pages of the website to add icons for aesthetic and UX purposes.
@@ -240,7 +234,7 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 ### Fixed bugs
 
-1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encounteered tthat was not letting the image load. The image in question is /workspace/MS3repo/assets/images/avocados.jpeg. The following methods were tried:
+1. Background image was the first image to be used as a background image of the body element of the base.html template and an issue was encounteered tthat was not letting the image load. The following methods were tried:
 
 a. body { 
     background: url(/images/avocados.jpeg) repeat 0 0;
@@ -264,7 +258,7 @@ f. tried setting background-size: 25px 25px;
 
 g. tried adding the styling directly to the body element in base.html file using the style="" attribute
 
-h. 
+The bug was eventually avoided by storing the image on [cloudinary](https://cloudinary.com/) and using the link to the image.
  
 
 ### Known bugs
@@ -389,9 +383,9 @@ https://wallpapercave.com/avocado-desktop-wallpapers).
 
 1. My mentor for professional support and guidance.
 
-2. My husband Kevin for continuous support and encouragement as well as help to think "outside the box".
+2. My husband Kevin for continuous support and encouragement.
 
-3. For the constant assistance from my 8 month old daughter Mila who was with me throughout.
+3. For the constant assistance from my 10 month old daughter Mila who was with me throughout and inspired to create the recipes website as she is a proper "foodie".
 
 
 
