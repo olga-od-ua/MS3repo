@@ -34,7 +34,7 @@ The target audience is people of all ages who provide childcare to children from
 
 3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
 
-4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and and self-feeding so I am looking for finger food ideas.
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and self-feeding so I am looking for finger food ideas.
 
 5. I am Chris, a dad to 15-month-old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutritious recipes to cook for them.
 
@@ -195,7 +195,7 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
    Upon landing on the Home Page Anna will most probably navigate to Browse by Age Groups Section and will continue exploring there. See [screenshot](assets/images/ux_stories_testing/new-user-3.png).
 
-4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and and self-feeding so I am looking for finger food ideas.
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and self-feeding so I am looking for finger food ideas.
 
    Upon landing on the Home Page Claire will most probably navigate to Browse by Meal Type Section and will navigate to Finger Food recipe collection. See [screenshot](assets/images/ux_stories_testing/new-user-4.png).
 
@@ -221,13 +221,17 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 9. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
 
-   Upon reopning of the website Barbara will be logged in from her previous session. She will be able to retrieve her saved recipes by going into My Favourites page.
+   Upon reopening of the website Barbara will be logged in from her previous session. She will be able to retrieve her saved recipes by going to My Favourites page.
 
 ## Returning Users
 
 10. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
 
+   Upon landing on the Home page Gloria will be able to navigate to All Recipes, where she will find her recipe by either using the search or simply by scrolling and she will see the Edit button next to the recipe she added (assuming she is logged in). See [screenshot](assets/images/ux_stories_testing/returning-user-10a.png). Once the Edit button is hit, Gloria will be brought to the Edit Recipe form (see [screenshot](assets/images/ux_stories_testing/returning-user-10b.png))
+
 11. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
+
+   Upon landing on the Home page Martina will be able to navigate to All Recipes, where she will find her recipe by either using the search or simply by scrolling and she will see the Delete button next to the recipe she added (assuming she is logged in). See [screenshot](assets/images/ux_stories_testing/new-user-10a.png). Once the Delete button is hit, Martina will be asked to Confirm or Cancel the deletion (see [screenshot](assets/images/ux_stories_testing/returning-user-11.png))
 
 ### Further testing
 
@@ -315,6 +319,8 @@ Due to the time constraints the following detected bugs have been fixed yet:
 
 3. Views of a recipe are added with every click on the materialize icon. This is not the perfect solution as the views are counted every time the collapsible item opens and closes. This means that if a user clicks on the icon to open the collapsible and then clicks on the icon to close the collapsible, 2 views will be added to the recipe.
 
+4. When opening the Edit Recipe form, each recipe's Age Group is changed to 0+ months regardless of what age group it had belonged before.
+
 #### Other
 Not a bug but a few remarks on the functionality of the website.
 
@@ -344,29 +350,42 @@ Not a bug but a few remarks on the functionality of the website.
 
 ## Deployment
 
+### Deployment to Heroku
+
+To deploy this page to Heroku from the GitHub repository:
+
+- Use pip3 freeze > requirements.txt to create a list of the dependencies for the website.
+- Create a Procfile for Heroku using the command: echo web: python app.py > Procfile
+- Use git add -A , git commit -m "(Your commit message)" , and git push , to push these files to your GitHub repository.
+- Navigate to Heroku and log in.
+- Create a new app by navigating to 'New' and 'Create New App'. Enter your app name and select your region and create app.
+- Under the 'Deploy' tab, select 'GitHub - Connect to GitHub'.
+- Enter your repository's name in the input field, and connect once found.
+- To set your environment variables navigate to the 'Settings' tab and scroll down to 'reveal config vars'
+- Add the following variables:
+
+IP:	0.0.0.0
+PORT:	5000
+MONGO_DBNAME: (The name of your MongoDB database)
+MONGO_URI: (Your MongoURI can be retrieved by going to MongoDB -> Collections -> Connect -> Connect to your application. Here you can use your credentials to generate the URI.)
+SECRET_KEY: (The secret key is a unique key known only to the developer)
+
+- Navigate to the 'Deploy' tab. To enable automatic deployment, scroll down to the 'Automatic Deploys' section.
+- Choose your GitHub branch and enable automatic deployment.
+
 ### GitHub Pages
-
-The project was deployed to GitHub Pages using the following steps:
-
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
-2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-    - Alternatively Click [Here](https://pages.github.com/) for more information.
-3. Scroll down the Settings page until you locate the "Pages" Section.
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. Select /root folder and hit save. 
-6. The now published site [link](https://olga-od-ua.github.io/the-gift-of-the-gab/) appears above "Source".
 
 ### Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/MS3repo).
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### Making a Local Clone
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/the-gift-of-the-gab).
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/olga-od-ua/MS3repo).
 2. To the left of the Gitpod button, click "Code".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", click . To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click . To clone a repository using GitHub CLI, click Use GitHub CLI, then click "copy symbol".
 4. Open Terminal.
@@ -375,7 +394,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 Type git clone, and then paste the URL you copied earlier.
 
 ```
-$ git clone https://github.com/olga-od-ua/the-gift-of-the-gab.git
+$ git clone https://github.com/olga-od-ua/MS3repo.git
 ```
 
 Press Enter to create your local clone.
