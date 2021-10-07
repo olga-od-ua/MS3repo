@@ -1,10 +1,10 @@
 # Baby Noms
 
-[Live project can be viewed here](https://).
+[Live project can be viewed here](https://baby-noms.herokuapp.com/).
 
 The primary goal of the website is to create a platform for recipe storage that is straightforward and easy to use.
 
-The website is aimed at parents of children who start eating solid foods (that is anywhere between 4 and 6 months old) and up until school age. It is also aimed at any other child caregiver who is willing to find or share a recipe. Users can register and save their favourite recipes.
+The website is aimed at parents of children who start eating solid foods (that is usually anywhere between 4 and 6 months old) and up until school age. It is also aimed at any other child caregiver who is willing to find or share a recipe. Users can register and save their favourite recipes.
 
 The recipes can be marked as Approved by The Irish Health Service Executive by users saving the recipe in case they found that recipe on the [HSE](https://www.hse.ie/eng/) website. However, a warning sign will always be informing all users that they will have to check with their child's doctor before giving any food to preserve the safety aspect of using this website.
 
@@ -19,11 +19,9 @@ THE RESEARCH PHASE
 1. The primary goal. 
 Baby Noms website is designed to provide a platform for recipes for babies and children starting from introducing solids age up until school age. The users will be able to register, browse recipes, search for recipes, add new recipes and save their favourite recipes to their profile.
 
-2. The users will be able to see suggested recipe collections such as: collections according to age group, meal type, cooking time etc.. This will help the users locate recipes that will be the most suitable for their needs faster.
+2. The users will be able to see suggested recipe collections such as: collections according to age group, meal type, cooking time etc. This will help the users locate recipes that will be the most suitable for their needs faster.
 
-3. The business objectives of the website are set to attract new customers and promote The Gift Of The Gab School.
-
-4. The customer's estimated needs are to get recipes quickly and easily, save their favourite recipes and add new ones.
+3. The customer's estimated needs are to get recipes quickly and easily, save their favourite recipes and add new ones.
 
 ### USER STORIES
 
@@ -181,9 +179,38 @@ All pages of the website, all CSS code, all JavaScript code and Python code were
 
 ### Testing User Stories from User Experience (UX) Section
 
-- #### Non-corporate new customers
+## New Users
+1. I am Rebecca and I am a new mother to a 6-month-old baby. It is time to start introducing solid foods to my baby but I want to see what other parents cook for their babies.
 
-1. see [screeshot]()
+    a. Upon opening of the website Rebecca will land on the Home Page with various recipe collections available to browse. As a mother she will most probably open Mom's favourite recipes and will continue exploring the recipe ideas in that section. See [screenshot](assets/images/ux_stories_testing/new-user-1a.png).
+
+   b. Alternatively Rebecca can open All Recipes page and explore all the recipes available on the website. See [screenshot](assets/images/ux_stories_testing/new-user-1b.png).
+
+2. I am Stacy and I am a mother to a 5-month-old baby. It is time to start introducing solids to my baby but I have no experience in cooking for babies. I want to find recipes that other mothers have tried and loved.
+
+3. I am Anna, a mother-to-be, and I just want to browse the different recipes for babies of different age groups to get an idea about what to expect when the baby arrives.
+
+4. I am Claire and I love cooking for my 9-month-old boy! He loves trying new food and I am looking for new recipes that I haven't cooked yet.
+
+5. I am Chris, a dad to 15-month-old twins and my wife has left on a business trip for a week. I reassured her that I will do my best to look after our kids so I want to find some easy and nutritious recipes to cook for them.
+
+6. I am Kate and I am looking for the tried and tested recipes for babies and toddlers where I could also save them for future reference.
+
+7. I am Julie, a new mother and I am looking for recipes to cook for my 8-month-old girl. I am only looking for recipes that are approved by healthcare professionals.
+
+8. I am Mary and I am a grandmother of 5 grandchildren. I love cooking and I often experiment with recipes for my grandchildren. I am looking for a platform to add and store my recipes so that I can then share them with my children so that they can cook "like their Granny" does.
+
+## Frequent Users
+
+1. I am Barbara and I have all my favourite baby recipes saved in my account. I open it every time I cook for my baby as I am terrible at remembering all the instructions.
+
+2. I am Susan and I love creating new recipes for my grandchildren. I love this website because it lets me easily save my recipes and then share them with my children so they can cook my recipes for their kids. Today I have a new recipe to add.
+
+## Returning Users
+
+1. I am Gloria and I have an account with BABY NOMS. I have just realized that I added a recipe into the wrong age group and I want to move it to the appropriate one.
+
+2. I am Martina and I'd like to delete some of the recipes I have previously shared on this website as I have been advised by my GP that it is dangerous to give raisins and whole nuts to children under 4 so I want to delete those recipes.
 
 ### Further testing
 
