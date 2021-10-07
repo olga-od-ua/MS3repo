@@ -91,7 +91,7 @@ In the PC version, the navigation is presented by the Nav bar with inline elemen
 
 **The Skeleton Plane**
 
-Wireframe can be found [here](/workspace/MS3repo/assets/wireframes/MS3Wireframe.pdf).
+Wireframe can be found [here](https://github.com/olga-od-ua/MS3repo/tree/main/assets/wireframes).
 
 **The Surface Plane**
 
